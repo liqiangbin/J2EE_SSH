@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.multipart.saveDir" value="/tmp"/>
+    <constant name="struts.i18n.encoding" value="UTF-8" />
+	<package name="chapter12" extends="struts-default">
+		<action name="cusAction_*" class="customerAction" method="{1}">
+			<result name="success">success.jsp</result>
+			<result name="input">cusreg.jsp</result>
+			<result name="index">dispcus.jsp</result>
+			<!-- 跳转到cusAction并调用all()函数 -->
+			<result name="disp" type="chain">cusAction_all</result> 
+		</action>
+		
+		<action name="deptheadAction_*" class="departmentheadAction" method="{1}">
+			<result name="success">departmentheadTest.jsp</result>
+		</action>
+		
+		<action name="upload" class="shiep.action.FileUploadAction" method="execute">
+            <!-- 动态设置savePath的属性值 -->
+            <param name="savePath">/images</param>
+            <result name="success">fileinfo.jsp</result>
+            <result name="input">/upload.jsp</result>
+            <interceptor-ref name="fileUpload">
+                <!-- 文件过滤 -->
+                <param name="allowedTypes">application/excel</param>
+                <!-- 文件大小, 以字节为单位 -->
+                <param name="maximumSize">1025956</param>
+            </interceptor-ref>
+            <!-- 默认拦截器必须放在fileUpload之后，否则无效 -->
+            <interceptor-ref name="defaultStack" />
+        </action>
+	</package>
+</struts>
