@@ -17,7 +17,7 @@
 		<script type="text/javascript" src="../DeptManager/Js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<form action="#">
+		
 		<table class="table table-bordered table-hover definewidth m10" width="60%" >
 			<% List<Departmenthead> list =(List<Departmenthead>)session.getAttribute("self"); %>
 		
@@ -67,49 +67,59 @@
             </h4>
          </div>
          <div class="modal-body">
-     <form action="#" method="post">
+        
+     <form action="deptheadAction_updatemyself" method="post">
 		<table class="table table-bordered table-hover definewidth m10" width="60%" >
-			
+		 <%Departmenthead depthead=new Departmenthead();
+		 depthead.setName(list.get(0).getName());
+		 depthead.setName(list.get(0).getSex());
+		  %>
 			<tr align="center">
 				<td align="right" width="20%">教师编号：</td>
-				<td align="left"><%=list.get(0).getId() %></td>
+				<td align="left"><%=list.get(0).getId()%></td>
 			</tr>
 			<tr align="center">
 				<td align="right" width="20%">姓&nbsp;&nbsp;名：</td>
-				<td align="left"><%=list.get(0).getName()%></td>
+				<td align="left"><input type="hidden" name="departmenthead.name" value="<%=list.get(0).getName()%>"><%=list.get(0).getName()%></td>
 			</tr>
 			<tr align="center">
 				<td align="right" width="20%">性&nbsp;&nbsp;别：</td>
-				<td align="left"><%=list.get(0).getSex()%></td>
+				<td align="left"><input type="hidden" name="departmenthead.sex" value="<%=list.get(0).getSex()%>"><%=list.get(0).getSex()%></td>
+			
 			</tr>
 				<tr align="center">
 				<td align="right" width="20%">密&nbsp;&nbsp;码：</td>
-				<td align="left"><input type="text" value="<%=list.get(0).getPassword()%>"></td>
+				<td align="left"><input type="text" name="departmenthead.password" value="<%=list.get(0).getPassword()%>"></td>
 			</tr>
 			<tr align="center">
 				<td align="right" width="20%">电&nbsp;&nbsp;话：</td>
-				<td align="left"><input type="text" value="<%=list.get(0).getPhone()%>"></td>
+				<td align="left"><input type="text" name="departmenthead.phone" value="<%=list.get(0).getPhone()%>"></td>
 			</tr>
 			<tr align="center">
 				<td align="right" width="20%">邮&nbsp;&nbsp;箱：</td>
-				<td align="left"><input type="text" value="<%=list.get(0).getEmail()%>"></td>
+				<td align="left"><input type="text" name="departmenthead.email" value="<%=list.get(0).getEmail()%>"></td>
 			</tr>
-		</table>
-		</form>
+		
          </div>
+         <tr>
+         <td colspan="2">
          <div class="modal-footer">
             <button type="button" class="btn btn-default" 
                data-dismiss="modal">关闭
             </button>
-            <button type="submit" class="btn btn-warning">
+            <button type="submit" class="btn btn-warning"  >
                提交更改
             </button>
          </div>
+         </td>
+         </tr>
+          </table>
+		  </form>
       </div><!-- /.modal-content -->
 </div><!-- /.modal -->
 </div>
 		
-		</form>
+		
 	</body>
 
 </html>

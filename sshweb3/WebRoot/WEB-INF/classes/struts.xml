@@ -16,6 +16,7 @@
 		<action name="deptheadAction_*" class="departmentheadAction" method="{1}">
 			<result name="success">departmentheadTest.jsp</result>
 			<result name="self">/DeptManager/myself/index.jsp</result>
+			<result name="updated" >/DeptManager/myself/index.jsp</result>
 		</action>
 		<action name="upload" class="shiep.action.FileUploadAction" method="execute">
             <!-- 动态设置savePath的属性值 -->

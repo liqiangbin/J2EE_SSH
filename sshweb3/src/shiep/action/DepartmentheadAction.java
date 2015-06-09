@@ -28,7 +28,6 @@ public class DepartmentheadAction  extends ActionSupport{
 	public String all() throws Exception {
 		 List<Departmenthead> list=departmentheaddao.findAllDepartmenthead();
 		 ActionContext context=ActionContext.getContext();
-		// System.out.println(list.get(0).getName());
 		 context.getSession().put("list", list);
 		return "success";
     }
@@ -37,5 +36,9 @@ public class DepartmentheadAction  extends ActionSupport{
 		 List<Departmenthead> list=departmentheaddao.findDepartmentheadById(departmenthead.getId());
 		context.getSession().put("self", list);
 		 return "self";
+	}
+	public String updatemyself() throws Exception{
+		 departmentheaddao.updatemyself(departmenthead);
+		 return "updated";
 	}
 }
