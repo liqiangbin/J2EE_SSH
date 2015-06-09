@@ -5,7 +5,7 @@
 <struts>
     <constant name="struts.multipart.saveDir" value="/tmp"/>
     <constant name="struts.i18n.encoding" value="UTF-8" />
-	<package name="chapter12" extends="struts-default">
+	<package name="chapter12" extends="struts-default" >
 		<action name="cusAction_*" class="customerAction" method="{1}">
 			<result name="success">success.jsp</result>
 			<result name="input">cusreg.jsp</result>
@@ -13,11 +13,10 @@
 			<!-- 跳转到cusAction并调用all()函数 -->
 			<result name="disp" type="chain">cusAction_all</result> 
 		</action>
-		
 		<action name="deptheadAction_*" class="departmentheadAction" method="{1}">
 			<result name="success">departmentheadTest.jsp</result>
+			<result name="self">/DeptManager/myself/index.jsp</result>
 		</action>
-		
 		<action name="upload" class="shiep.action.FileUploadAction" method="execute">
             <!-- 动态设置savePath的属性值 -->
             <param name="savePath">/images</param>
@@ -30,7 +29,7 @@
                 <param name="maximumSize">1025956</param>
             </interceptor-ref>
             <!-- 默认拦截器必须放在fileUpload之后，否则无效 -->
-            <interceptor-ref name="defaultStack" />
+            <interceptor-ref name="defaultStack" /> 
         </action>
 	</package>
 </struts>

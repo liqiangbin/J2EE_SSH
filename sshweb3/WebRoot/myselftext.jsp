@@ -7,16 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <table width="70%" height="100" border="1" align="center">
+
 		<tr>
 			<td width="20%" height="25" align="center">ID</td>
 			<td width="30%" align="center">Name</td>
 			<td width="30%" align="center">电话</td>
 			<td width="10%" align="center">操作</td>
 		</tr>
-		<% List<Departmenthead> list =(List<Departmenthead>)session.getAttribute("list"); 
-		//out.print(list.size());
-		%>
+		<% List<Departmenthead> list =(List<Departmenthead>)session.getAttribute("self"); %>
 		<tr>
 		<td><%=list.get(0).getPhone() %></td>
 		<td><%=list.get(0).getName() %></td>

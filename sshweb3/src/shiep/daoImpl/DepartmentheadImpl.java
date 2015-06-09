@@ -28,5 +28,4 @@ public class DepartmentheadImpl extends BaseDao implements DepartmentheadDao {
 		return null;
 	}
 	
-	
 }

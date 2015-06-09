@@ -11,13 +11,20 @@
     <link href="assets/css/main-min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
+<% session.setAttribute("ID", "2500010"); %>
 <div class="header">
 
     <div class="dl-title">
         <!--<img src="/chinapost/Public/assets/img/top.png">-->
     </div>
-    <div class="dl-log">欢迎您，<span class="dl-log-user">root</span><a href="/chinapost/index.php?m=Public&a=logout" title="退出系统" class="dl-log-quit">[退出]</a>
+    <%  //String ID=(String)session.getAttribute("ID"); 
+    String ID="2500010";
+    Departmenthead depthead=new Departmenthead();
+    depthead.setId(ID);
+    String name="lll";
+    String id="2500010";
+    %>
+    <div class="dl-log">欢迎您，<span class="dl-log-user"><%=ID %></span><a href="/chinapost/index.php?m=Public&a=logout" title="退出系统" class="dl-log-quit">[退出]</a>
     </div>
 </div>
 <div class="content">
@@ -27,7 +34,6 @@
             <li class="nav-item dl-selected"><div class="nav-item-inner nav-home">系统管理</div></li>		
             <li class="nav-item dl-selected"><div class="nav-item-inner nav-order">课程管理</div></li>
   
-
         </ul>
     </div>
     <ul id="J_NavContent" class="dl-tab-conten">
@@ -41,7 +47,7 @@
 <script>
     BUI.use('common/main',function(){
         var config = [{id:'1',menu:[{text:'系统管理',items:[
-        {id:'12',text:'个人信息管理',href:'myself/index.jsp'},
+        {id:'12',text:'个人信息管理',href:'deptheadAction_findbyId?departmenthead.id=<%=id%>'},
         {id:'2',text:'学院公告',href:'Notice/collegeNotice.jsp'},
        {id:'5',text:'本系公告',href:'Notice/deptnotice.jsp'}]}]},
         {id:'7',homePage: '9',menu:[{text:'课程信息维护',items:[

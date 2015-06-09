@@ -24,15 +24,15 @@
 			
 			<tr align="center">
 				<td align="right" width="10%">教师编号：</td>
-				<td align="left">2500010</td>
+				<td align="left">2500125</td>
 			</tr>
 			<tr align="center">
 				<td align="right" width="10%">姓&nbsp;&nbsp;名：</td>
-				<td align="left">张三</td>
+				<td align="left">章国文</td>
 			</tr>
 			<tr align="center">
 				<td align="right" width="10%">院&nbsp;&nbsp;系：</td>
-				<td align="left">计算机学院</td>
+				<td align="left">计算机</td>
 			</tr>
 			<tr align="center">
 				<td align="right" width="10%">性&nbsp;&nbsp;别：</td>

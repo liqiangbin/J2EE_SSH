@@ -17,7 +17,7 @@ public class DepartmentheadAction  extends ActionSupport{
 	private Departmenthead departmenthead;
 	@Resource
 	private DepartmentheadDao departmentheaddao;
-
+	
 	public Departmenthead getDepartmenthead() {
 		return departmenthead;
 	}
@@ -27,11 +27,15 @@ public class DepartmentheadAction  extends ActionSupport{
 	@SuppressWarnings("unchecked")
 	public String all() throws Exception {
 		 List<Departmenthead> list=departmentheaddao.findAllDepartmenthead();
-        // Map request=(Map) ActionContext.getContext().get("request");
-         //request.put("list1",list); 
 		 ActionContext context=ActionContext.getContext();
+		// System.out.println(list.get(0).getName());
 		 context.getSession().put("list", list);
 		return "success";
     }
-	
+	public String findbyId() throws Exception{
+		 ActionContext context=ActionContext.getContext();
+		 List<Departmenthead> list=departmentheaddao.findDepartmentheadById(departmenthead.getId());
+		context.getSession().put("self", list);
+		 return "self";
+	}
 }

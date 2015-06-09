@@ -7,40 +7,39 @@
 	<head>
 		<title></title>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="../Css/bootstrap.css" />
-		<link rel="stylesheet" type="text/css" href="../Css/bootstrap-responsive.css" />
-		<link rel="stylesheet" type="text/css" href="../Css/style.css" />
-		<script type="text/javascript" src="../Js/jquery.js"></script>
-		<script type="text/javascript" src="../Js/jquery.sorted.js"></script>
-		<script type="text/javascript" src="../Js/bootstrap.js"></script>
-		<script type="text/javascript" src="../Js/bootstrap.min.js"></script>
-
 		
+		<link rel="stylesheet" type="text/css" href="../DeptManager/Css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../DeptManager/Css/bootstrap-responsive.css" />
+		<link rel="stylesheet" type="text/css" href="../DeptManager/Css/style.css" />
+		<script type="text/javascript" src="../DeptManager/Js/jquery.js"></script>
+		<script type="text/javascript" src="../DeptManager/Js/jquery.sorted.js"></script>
+		<script type="text/javascript" src="../DeptManager/Js/bootstrap.js"></script>
+		<script type="text/javascript" src="../DeptManager/Js/bootstrap.min.js"></script>
 	</head>
-
 	<body>
 		<form action="#">
 		<table class="table table-bordered table-hover definewidth m10" width="60%" >
-			
+			<% List<Departmenthead> list =(List<Departmenthead>)session.getAttribute("self"); %>
+		
 			<tr align="center">
 				<td align="right" width="10%">教师编号：</td>
-				<td align="left">2500010</td>
+				<td align="left"><%=list.get(0).getId() %></td>
 			</tr>
 			<tr align="center">
 				<td align="right" width="10%">姓&nbsp;&nbsp;名：</td>
-				<td align="left">张三</td>
+				<td align="left"><%=list.get(0).getName()%></td>
 			</tr>
 			<tr align="center">
 				<td align="right" width="10%">性&nbsp;&nbsp;别：</td>
-				<td align="left">男</td>
+				<td align="left"><%=list.get(0).getSex()%></td>
 			</tr>
 			<tr align="center">
 				<td align="right" width="10%">电&nbsp;&nbsp;话：</td>
-				<td align="left">12345678</td>
+				<td align="left"><%=list.get(0).getPhone()%></td>
 			</tr>
 			<tr align="center">
 				<td align="right" width="10%">邮&nbsp;&nbsp;箱：</td>
-				<td align="left">12345678@qq.com</td>
+				<td align="left"><%=list.get(0).getEmail()%></td>
 			</tr>
 		
 		<tr >
@@ -73,27 +72,27 @@
 			
 			<tr align="center">
 				<td align="right" width="20%">教师编号：</td>
-				<td align="left">2500010</td>
+				<td align="left"><%=list.get(0).getId() %></td>
 			</tr>
 			<tr align="center">
 				<td align="right" width="20%">姓&nbsp;&nbsp;名：</td>
-				<td align="left">张三</td>
+				<td align="left"><%=list.get(0).getName()%></td>
 			</tr>
 			<tr align="center">
 				<td align="right" width="20%">性&nbsp;&nbsp;别：</td>
-				<td align="left">男</td>
+				<td align="left"><%=list.get(0).getSex()%></td>
 			</tr>
 				<tr align="center">
 				<td align="right" width="20%">密&nbsp;&nbsp;码：</td>
-				<td align="left"><input type="text" value="12345678"></td>
+				<td align="left"><input type="text" value="<%=list.get(0).getPassword()%>"></td>
 			</tr>
 			<tr align="center">
 				<td align="right" width="20%">电&nbsp;&nbsp;话：</td>
-				<td align="left"><input type="text" value="12345678"></td>
+				<td align="left"><input type="text" value="<%=list.get(0).getPhone()%>"></td>
 			</tr>
 			<tr align="center">
 				<td align="right" width="20%">邮&nbsp;&nbsp;箱：</td>
-				<td align="left"><input type="text" value="12345678@qq.com"></td>
+				<td align="left"><input type="text" value="<%=list.get(0).getEmail()%>"></td>
 			</tr>
 		</table>
 		</form>

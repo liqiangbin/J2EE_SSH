@@ -46,4 +46,6 @@ public class CustomerAction extends ActionSupport {
 		customerDao.deleteCustomer(customer.getCustomerId());
 		return "disp";
     }
+	
+	
 }
