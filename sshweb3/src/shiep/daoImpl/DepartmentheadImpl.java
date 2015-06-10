@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.opensymphony.xwork2.ActionContext;
+
 import shiep.bean.Departmenthead;
 import shiep.dao.BaseDao;
 import shiep.dao.DepartmentheadDao;
@@ -21,11 +24,7 @@ public class DepartmentheadImpl extends BaseDao implements DepartmentheadDao {
 		return (List<Departmenthead>)getHibernateTemplate().find("from shiep.bean.Departmenthead where id='"+id+"'");
 	}
 
-	@Override
-	public List<Departmenthead> Departmentheadlogin(String id, String password) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 	@Transactional
 	public void updatemyself(Departmenthead depthead) {
 		try{
@@ -35,6 +34,19 @@ public class DepartmentheadImpl extends BaseDao implements DepartmentheadDao {
 			throw e;
 		}
 		
+	}
+
+	@Override
+	public boolean login(String username, String password) {
+		List<Departmenthead> depthead=this.getHibernateTemplate().find("from shiep.bean.Departmenthead where id=? and password=?", username,password);
+		boolean flag=false;
+		if(depthead.size()>0){
+			 ActionContext context=ActionContext.getContext();
+			 context.getSession().put("person", depthead);
+			flag=true;
+		}
+		return flag;
+
 	}
 	
 }

@@ -7,14 +7,14 @@
 <head>
     <title></title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../DeptManager/Css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="../DeptManager/Css/bootstrap-responsive.css" />
-    <link rel="stylesheet" type="text/css" href="../DeptManager/Css/style.css" />
-    <script type="text/javascript" src="../DeptManager/Js/jquery.js"></script>
-    <script type="text/javascript" src="../DeptManager/Js/jquery.sorted.js"></script>
-    <script type="text/javascript" src="../DeptManager/Js/bootstrap.js"></script>
-    <script type="text/javascript" src="../DeptManager/Js/ckform.js"></script>
-    <script type="text/javascript" src="../DeptManager/Js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="DeptManager/Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="DeptManager/Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="DeptManager/Css/style.css" />
+    <script type="text/javascript" src="DeptManager/Js/jquery.js"></script>
+    <script type="text/javascript" src="DeptManager/Js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="DeptManager/Js/bootstrap.js"></script>
+    <script type="text/javascript" src="DeptManager/Js/ckform.js"></script>
+    <script type="text/javascript" src="DeptManager/Js/common.js"></script>
 
    
 </head>

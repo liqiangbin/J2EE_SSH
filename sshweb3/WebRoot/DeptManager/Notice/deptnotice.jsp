@@ -7,13 +7,13 @@
 	<head>
 		<title></title>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="../DeptManager/Css/bootstrap.css" />
-		<link rel="stylesheet" type="text/css" href="../DeptManager/Css/bootstrap-responsive.css" />
-		<link rel="stylesheet" type="text/css" href="../DeptManager/Css/style.css" />
-		<script type="text/javascript" src="../DeptManager/Js/jquery.js"></script>
-		<script type="text/javascript" src="../DeptManager/Js/jquery.sorted.js"></script>
-		<script type="text/javascript" src="../DeptManager/Js/bootstrap.js"></script>
-	<script type="text/javascript" src="../DeptManager/Js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="DeptManager/Css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="DeptManager/Css/bootstrap-responsive.css" />
+		<link rel="stylesheet" type="text/css" href="DeptManager/Css/style.css" />
+		<script type="text/javascript" src="DeptManager/Js/jquery.js"></script>
+		<script type="text/javascript" src="DeptManager/Js/jquery.sorted.js"></script>
+		<script type="text/javascript" src="DeptManager/Js/bootstrap.js"></script>
+	<script type="text/javascript" src="DeptManager/Js/bootstrap.min.js"></script>
 
 		</style>
 	</head>
@@ -74,8 +74,13 @@
 									<%
 									Date time1=new Date();
 		                           SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		                             String time=sdf.format(time1);%>
+		                             String time=sdf.format(time1);
+		                            List<Departmenthead> person=(List<Departmenthead>)session.getAttribute("person");
+ 
+		                             %>
 										<input type="hidden" name="announce.time" value="<%=time%>"/>
+										</td>
+										<td><input type="hidden" name="announce.did" value="<%=person.get(0).getDid()%>"/>
 										</td>
 									</tr>
 									<tr>

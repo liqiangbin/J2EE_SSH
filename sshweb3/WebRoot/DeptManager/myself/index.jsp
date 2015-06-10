@@ -8,13 +8,13 @@
 		<title></title>
 		<meta charset="UTF-8">
 		
-		<link rel="stylesheet" type="text/css" href="../DeptManager/Css/bootstrap.css" />
-		<link rel="stylesheet" type="text/css" href="../DeptManager/Css/bootstrap-responsive.css" />
-		<link rel="stylesheet" type="text/css" href="../DeptManager/Css/style.css" />
-		<script type="text/javascript" src="../DeptManager/Js/jquery.js"></script>
-		<script type="text/javascript" src="../DeptManager/Js/jquery.sorted.js"></script>
-		<script type="text/javascript" src="../DeptManager/Js/bootstrap.js"></script>
-		<script type="text/javascript" src="../DeptManager/Js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="DeptManager/Css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="DeptManager/Css/bootstrap-responsive.css" />
+		<link rel="stylesheet" type="text/css" href="DeptManager/Css/style.css" />
+		<script type="text/javascript" src="DeptManager/Js/jquery.js"></script>
+		<script type="text/javascript" src="DeptManager/Js/jquery.sorted.js"></script>
+		<script type="text/javascript" src="DeptManager/Js/bootstrap.js"></script>
+		<script type="text/javascript" src="DeptManager/Js/bootstrap.min.js"></script>
 	</head>
 	<body>
 		

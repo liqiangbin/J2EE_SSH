@@ -15,6 +15,9 @@ import com.opensymphony.xwork2.ActionSupport;
 @Controller
 public class DepartmentheadAction  extends ActionSupport{
 	private Departmenthead departmenthead;
+	private String username;
+	private String password;
+	private String enter;
 	@Resource
 	private DepartmentheadDao departmentheaddao;
 	
@@ -23,6 +26,25 @@ public class DepartmentheadAction  extends ActionSupport{
 	}
 	public void setDepartmenthead(Departmenthead departmenthead) {
 		this.departmenthead = departmenthead;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	public String getEnter() {
+		return enter;
+	}
+	public void setEnter(String enter) {
+		this.enter = enter;
 	}
 	@SuppressWarnings("unchecked")
 	public String all() throws Exception {
@@ -40,5 +62,11 @@ public class DepartmentheadAction  extends ActionSupport{
 	public String updatemyself() throws Exception{
 		 departmentheaddao.updatemyself(departmenthead);
 		 return "updated";
+	}
+	public String login() throws Exception{
+		if(departmentheaddao.login(username, password)&&"ÏµÖ÷ÈÎµÇÂ¼".equals(enter)){
+			//System.out.println(departmentheaddao.login(username, password));
+		return  "success";}
+		return  "false";
 	}
 }
