@@ -45,7 +45,7 @@
         var config = [{id:'1',menu:[{text:'系统管理',items:[
         {id:'12',text:'个人信息管理',href:'deptheadAction_findbyId?departmenthead.id=<%=id%>'},
         {id:'2',text:'学院公告',href:'announceAction_findByStatus'},
-       {id:'5',text:'本系公告',href:'Notice/deptnotice.jsp'}]}]},
+       {id:'5',text:'本系公告',href:'announceAction_findBydept?departmenthead.id=<%=id%>'}]}]},
         {id:'7',homePage: '9',menu:[{text:'课程信息维护',items:[
         {id:'9',text:'课程大纲分配',href:'Course/MatchOutline.jsp'},
         {id:'3',text:'课程大纲管理',href:'Course/CourseOutline.jsp'},

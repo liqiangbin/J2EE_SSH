@@ -23,6 +23,8 @@
 		     <result name="search" >/DeptManager/Notice/collegeNotice.jsp</result>
 		     <result name="deptAnnounce" >/DeptManager/Notice/deptnotice.jsp</result>
 		     <result name="deptsearch" >/DeptManager/Notice/deptnotice.jsp</result>
+		     <result name="deleted" >/DeptManager/Notice/deptnotice.jsp</result>
+		     <result name="add">/DeptManager/index.jsp</result>
 		</action>
 		<action name="upload" class="shiep.action.FileUploadAction" method="execute">
             <!-- 动态设置savePath的属性值 -->
