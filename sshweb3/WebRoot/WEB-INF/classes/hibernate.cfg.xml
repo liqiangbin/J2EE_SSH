@@ -13,5 +13,6 @@
 	<property name="myeclipse.connection.profile">mysql</property>
 	<mapping resource="shiep/bean/Customer.hbm.xml" />
 	<mapping resource="shiep/bean/Departmenthead.hbm.xml" />
+	<mapping resource="shiep/bean/Announce.hbm.xml" />
 </session-factory>
 </hibernate-configuration>

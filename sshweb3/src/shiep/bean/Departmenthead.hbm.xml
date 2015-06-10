@@ -35,5 +35,15 @@
                 <comment>瀵嗙爜</comment>
             </column>
         </property>
+        <property name="did" type="java.lang.String">
+            <column name="did" length="50">
+                <comment>绯诲彿</comment>
+            </column>
+        </property>
+        <property name="dname" type="java.lang.String">
+            <column name="dname" length="50">
+                <comment>绯诲悕</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

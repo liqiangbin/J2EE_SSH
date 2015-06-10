@@ -30,6 +30,10 @@
 				<td align="left"><%=list.get(0).getName()%></td>
 			</tr>
 			<tr align="center">
+				<td align="right" width="10%">所属系别：</td>
+				<td align="left"><%=list.get(0).getDname()%></td>
+			</tr>
+			<tr align="center">
 				<td align="right" width="10%">性&nbsp;&nbsp;别：</td>
 				<td align="left"><%=list.get(0).getSex()%></td>
 			</tr>
@@ -72,7 +76,9 @@
 		<table class="table table-bordered table-hover definewidth m10" width="60%" >
 		 <%Departmenthead depthead=new Departmenthead();
 		 depthead.setName(list.get(0).getName());
-		 depthead.setName(list.get(0).getSex());
+		 depthead.setSex(list.get(0).getSex());
+		 depthead.setDid(list.get(0).getDid());
+		 
 		  %>
 			<tr align="center">
 				<td align="right" width="20%">教师编号：</td>
@@ -81,6 +87,14 @@
 			<tr align="center">
 				<td align="right" width="20%">姓&nbsp;&nbsp;名：</td>
 				<td align="left"><input type="hidden" name="departmenthead.name" value="<%=list.get(0).getName()%>"><%=list.get(0).getName()%></td>
+			</tr>
+			<tr align="center">
+				<td align="right" width="20%">所属系号：</td>
+				<td align="left"><input type="hidden" name="departmenthead.did" value="<%=list.get(0).getDid()%>"><%=list.get(0).getDid()%></td>
+			</tr>
+				<tr align="center">
+				<td align="right" width="20%">所属系名：</td>
+				<td align="left"><input type="hidden" name="departmenthead.dname" value="<%=list.get(0).getDname()%>"><%=list.get(0).getDname()%></td>
 			</tr>
 			<tr align="center">
 				<td align="right" width="20%">性&nbsp;&nbsp;别：</td>

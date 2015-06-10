@@ -18,6 +18,12 @@
 			<result name="self">/DeptManager/myself/index.jsp</result>
 			<result name="updated" >/DeptManager/myself/index.jsp</result>
 		</action>
+		<action name="announceAction_*" class="announceAction" method="{1}">
+		    <result name="instAnnounce" >/DeptManager/Notice/collegeNotice.jsp</result>
+		     <result name="search" >/DeptManager/Notice/collegeNotice.jsp</result>
+		     <result name="deptAnnounce" >/DeptManager/Notice/deptnotice.jsp</result>
+		     <result name="deptsearch" >/DeptManager/Notice/deptnotice.jsp</result>
+		</action>
 		<action name="upload" class="shiep.action.FileUploadAction" method="execute">
             <!-- 动态设置savePath的属性值 -->
             <param name="savePath">/images</param>

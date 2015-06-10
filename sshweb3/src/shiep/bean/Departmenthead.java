@@ -14,6 +14,8 @@ public class Departmenthead implements java.io.Serializable {
 	private String phone;
 	private String email;
 	private String password;
+	private String did;
+	private String dname;
 
 	// Constructors
 
@@ -28,13 +30,15 @@ public class Departmenthead implements java.io.Serializable {
 
 	/** full constructor */
 	public Departmenthead(String id, String name, String sex, String phone,
-			String email, String password) {
+			String email, String password, String did, String dname) {
 		this.id = id;
 		this.name = name;
 		this.sex = sex;
 		this.phone = phone;
 		this.email = email;
 		this.password = password;
+		this.did = did;
+		this.dname = dname;
 	}
 
 	// Property accessors
@@ -85,6 +89,22 @@ public class Departmenthead implements java.io.Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getDid() {
+		return this.did;
+	}
+
+	public void setDid(String did) {
+		this.did = did;
+	}
+
+	public String getDname() {
+		return this.dname;
+	}
+
+	public void setDname(String dname) {
+		this.dname = dname;
 	}
 
 }

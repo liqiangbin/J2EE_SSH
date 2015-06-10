@@ -1,7 +1,6 @@
+<%@page import="shiep.dao.DepartmentheadDao"%>
 <%@ page language="java" import="shiep.daoImpl.*,shiep.action.*,shiep.bean.*,java.util.*" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
 <html>
 <head>
     <title>后台管理系统</title>
@@ -17,14 +16,13 @@
     <div class="dl-title">
         <!--<img src="/chinapost/Public/assets/img/top.png">-->
     </div>
-    <%  //String ID=(String)session.getAttribute("ID"); 
+    <%  //String ID=(String)session.getAttribute("ID");
     String ID="2500010";
-    Departmenthead depthead=new Departmenthead();
-    depthead.setId(ID);
-    String name="lll";
     String id="2500010";
+// ApplicationContext context = new ClassPathXmlApplicationContext("aplicationContext.xml");
+ //  DepartmentheadDao dao=(DepartmentheadDao)context.getBean("name");
     %>
-    <div class="dl-log">欢迎您，<span class="dl-log-user"><%=ID %></span><a href="/chinapost/index.php?m=Public&a=logout" title="退出系统" class="dl-log-quit">[退出]</a>
+    <div class="dl-log">欢迎您<span class="dl-log-user"><%=id%></span><a href="/chinapost/index.php?m=Public&a=logout" title="退出系统" class="dl-log-quit">[退出]</a>
     </div>
 </div>
 <div class="content">
@@ -33,11 +31,9 @@
         <ul id="J_Nav"  class="nav-list ks-clear">
             <li class="nav-item dl-selected"><div class="nav-item-inner nav-home">系统管理</div></li>		
             <li class="nav-item dl-selected"><div class="nav-item-inner nav-order">课程管理</div></li>
-  
         </ul>
     </div>
     <ul id="J_NavContent" class="dl-tab-conten">
-
     </ul>
 </div>
 <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js"></script>
@@ -48,7 +44,7 @@
     BUI.use('common/main',function(){
         var config = [{id:'1',menu:[{text:'系统管理',items:[
         {id:'12',text:'个人信息管理',href:'deptheadAction_findbyId?departmenthead.id=<%=id%>'},
-        {id:'2',text:'学院公告',href:'Notice/collegeNotice.jsp'},
+        {id:'2',text:'学院公告',href:'announceAction_findByStatus'},
        {id:'5',text:'本系公告',href:'Notice/deptnotice.jsp'}]}]},
         {id:'7',homePage: '9',menu:[{text:'课程信息维护',items:[
         {id:'9',text:'课程大纲分配',href:'Course/MatchOutline.jsp'},

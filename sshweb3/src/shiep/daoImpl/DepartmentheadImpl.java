@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import shiep.bean.Customer;
 import shiep.bean.Departmenthead;
 import shiep.dao.BaseDao;
 import shiep.dao.DepartmentheadDao;
@@ -31,7 +29,7 @@ public class DepartmentheadImpl extends BaseDao implements DepartmentheadDao {
 	@Transactional
 	public void updatemyself(Departmenthead depthead) {
 		try{
-			System.out.println("##########");
+			//System.out.println("##########");
 			//System.out.println(depthead.getName());
 			getHibernateTemplate().saveOrUpdate(depthead);
 		}
