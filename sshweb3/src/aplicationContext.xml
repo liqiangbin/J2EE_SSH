@@ -26,5 +26,5 @@
     <!-- 使用annotation定义事务 -->
     <tx:annotation-driven transaction-manager="transactionManager" />
      <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
-    <context:component-scan base-package="shiep.action,shiep.dao,shiep.daoImpl" />
+    <context:component-scan base-package="shiep.action,shiep.dao,shiep.daoImpl,shiep.service,shiep.serviceImpl" />
 </beans>

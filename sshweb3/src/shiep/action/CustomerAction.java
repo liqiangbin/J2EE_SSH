@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import shiep.bean.Customer;
 import shiep.bean.PageBean;
 import shiep.dao.CustomerDao;
-import shiep.dao.CustomerService;
+import shiep.service.CustomerService;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -20,9 +20,9 @@ public class CustomerAction extends ActionSupport {
 	    private int page;    //第几页
 	    private PageBean pageBean;    //包含分布信息的bean
 	private Customer customer;
-
 	@Resource
 	private CustomerDao customerDao;
+	@Resource
 	 private CustomerService customerService;
 	public Customer getCustomer() {
 		return customer;
@@ -78,11 +78,9 @@ public class CustomerAction extends ActionSupport {
 		return "disp";
     }
 	public String pagesort() throws Exception {
-		System.out.println("############");
+		//System.out.println("############");
         //分页的pageBean,参数pageSize表示每页显示记录数,page为当前页
-       PageBean p = customerService.queryForPage(2, page);
-       Map request=(Map) ActionContext.getContext().get("request");
-       request.put("pagebean", p); 
+       this.pageBean= customerService.queryForPage(2, page);
         return "page";
     }
 	

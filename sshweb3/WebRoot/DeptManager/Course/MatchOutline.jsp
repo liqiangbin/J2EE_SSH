@@ -16,6 +16,7 @@
    <script type="text/javascript" src="DeptManager/Js/bootstrap.min.js"></script>
 </head>
 <body>
+
    <table class="table table-bordered table-hover definewidth m10">
 	<caption align="absmiddle"><h2>待分配课程大纲信息</h2></caption>
     <thead>
@@ -23,29 +24,52 @@
         <th>课程号</th>
         <th>课程名称</th>
         <th>分配状态
-        <br>(0表示未分配，1表示已分配)
         </th>
-        <th>填写状态
-         <br>(0表示未填写，1表示已填写)</th>
+        <th>填写状态</th>
+         <th>填写教师</th>
         <th>操作</th>
     </tr>
     </thead>
-	     <s:iterator value="#request.outline" id="outline">
+    <% List<Matchmessage> list =(List<Matchmessage>)session.getAttribute("outline");
+    for(int i=0;i<list.size();i++){
+     %>
+	    
+	     
 			<tr>
-				<td width="20%" align="center"><s:property value="#outline.cid" />
+				<td width="15%" align="center"><%=list.get(i).getCid() %></td>
+				<td width="15%" align="center"><%=list.get(i).getCname() %>
 				</td>
-				<td width="20%" align="center"><s:property value="#outline.cname" />
+				<td width="15%" align="center">
+				<% if(list.get(i).getDeptstatus()==0){%>
+				未分配
+				<%} else{%>
+				已分配
+				<%} %>
 				</td>
-				<td width="20%" align="center"><s:property value="#outline.deptstatus" />
+				<td width="15%" align="center">
+				<% if(list.get(i).getTstatus()==0){%>
+				未填写
+				<%} else{%>
+				已填写
+				<%} %>
 				</td>
-				<td width="20%" align="center"><s:property value="#outline.tstatus"/></td>
-            	<td width="20%"><button class="btn btn-success btn-lg" data-toggle="modal" 
-   data-target="#myModal">
-   分配教学大纲到教师
+				<td width="15%" align="center">
+				<%List<Teacher> t =(List<Teacher>)session.getAttribute("teacher");
+				String name=null;
+				for(int x=0;x<t.size();x++){
+				if(list.get(i).getTid().equals(t.get(x).getId()))
+				name=t.get(x).getName();
+				}
+				 %>
+				 <%=name %>
+				 </td>
+				<td width="20%"><button class="btn btn-success btn-lg" data-toggle="modal" 
+   data-target="#<%=i%>">
+   指定教师/重新分配
 </button>
-
+<form action="matchmessageAction_sort" method="post">
 <!-- 模态框（Modal） -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+<div class="modal fade" id="<%=i%>" tabindex="-1" role="dialog" 
    aria-labelledby="myModalLabel" aria-hidden="true">
    <div class="modal-dialog">
       <div class="modal-content">
@@ -59,30 +83,39 @@
             </h4>
          </div>
          <div class="modal-body">
-         	
          <div class="form-group">
       <label for="name">本系教师：</label>
-      <select class="form-control">
-       <s:iterator value="#request.teacher" id="teacher">
-         <option value=<s:property value="#teacher.id" />><s:property value="#teacher.name" /></option>
-         </s:iterator>
+      <select class="form-control"  name=matchmessage.tid>
+      <% List<Teacher> teacherlist =(List<Teacher>)session.getAttribute("teacher");
+      for(int j=0;j<teacherlist.size();j++)
+       {%>
+         <option value=<%=teacherlist.get(j).getId() %>>
+        <%=teacherlist.get(j).getName() %></option>
+         <%} %>
       </select>
+       <input type="hidden" name=matchmessage.id  value="<%=list.get(i).getId()%>" />
+          <input type="hidden" name=matchmessage.cid  value="<%=list.get(i).getCid()%>"  />
+          <input type="hidden" name=matchmessage.cname  value="<%=list.get(i).getCname()%>" />
+    <input type="hidden" name=matchmessage.did  value="<%=list.get(i).getDid()%>" />
+    <input type="hidden" name=matchmessage.deptstatus  value=<%=1%> />
+   <input type="hidden" name=matchmessage.tstatus  value=<%=0%> />
       </div>
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-default" 
                data-dismiss="modal">取消
             </button>
-            <button type="button" class="btn btn-success">
+            <button type="submit" class="btn btn-success">
                保存更改
             </button>
          </div>
       </div><!-- /.modal-content -->
 </div><!-- /.modal -->
 </div>
-            </td>
-       			</tr>
-	</s:iterator>
+</form>
+        </td>
+       	</tr>
+	<%} %>
 </table>
 </body>
 </html>

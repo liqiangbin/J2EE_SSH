@@ -31,6 +31,7 @@
 		</action>
 			<action name="matchmessageAction_*" class="matchmessageAction" method="{1}">
 		     <result name="success">/DeptManager/Course/MatchOutline.jsp</result>
+		     <result name="sort">/DeptManager/Course/MatchOutline.jsp</result>
 		</action>
 		<action name="teaAction_*" class="teacherAction" method="{1}">
 			<result name="index">admin/teacher/index.jsp</result>
