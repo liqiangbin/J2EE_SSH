@@ -42,11 +42,11 @@
         {id:'2',text:'学院公告',href:'announceAction_findByStatus'},
        {id:'5',text:'本系公告',href:'announceAction_findBydept?departmenthead.id=<%=person.get(0).getId()%>'}]}]},
         {id:'7',homePage: '9',menu:[{text:'课程信息维护',items:[
-        {id:'9',text:'课程大纲分配',href:'Course/MatchOutline.jsp'},
-        {id:'3',text:'课程大纲管理',href:'Course/CourseOutline.jsp'},
-         {id:'4',text:'教学进度表',href:'Course/TeachingProgress.jsp'},
-          {id:'6',text:'实验进度表',href:'Course/TestProgress.jsp'},
-           {id:'8',text:'信息统计',href:'Course/MessageCount.jsp'}
+        {id:'9',text:'课程大纲分配',href:'matchmessageAction_findbydept?matchmessage.did=<%=person.get(0).getDid()%>'},
+        {id:'3',text:'课程大纲管理',href:'DeptManager/Course/CourseOutline.jsp'},
+         {id:'4',text:'教学进度表',href:'DeptManager/Course/TeachingProgress.jsp'},
+          {id:'6',text:'实验进度表',href:'DeptManager/Course/TestProgress.jsp'},
+           {id:'8',text:'信息统计',href:'DeptManager/Course/MessageCount.jsp'}
         ]}]}];
         new PageUtil.MainPage({
             modulesConfig : config

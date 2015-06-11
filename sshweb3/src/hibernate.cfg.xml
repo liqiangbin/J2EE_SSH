@@ -14,5 +14,7 @@
 	<mapping resource="shiep/bean/Customer.hbm.xml" />
 	<mapping resource="shiep/bean/Departmenthead.hbm.xml" />
 	<mapping resource="shiep/bean/Announce.hbm.xml" />
+	<mapping resource="shiep/bean/Matchmessage.hbm.xml" />
+	<mapping resource="shiep/bean/Teacher.hbm.xml" />
 </session-factory>
 </hibernate-configuration>

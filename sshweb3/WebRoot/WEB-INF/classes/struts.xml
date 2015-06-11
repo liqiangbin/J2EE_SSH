@@ -12,6 +12,7 @@
 			<result name="index">dispcus.jsp</result>
 			<!-- 跳转到cusAction并调用all()函数 -->
 			<result name="disp" type="chain">cusAction_all</result> 
+			<result name="page">Customerpage.jsp</result>
 		</action>
 		<action name="deptheadAction_*" class="departmentheadAction" method="{1}">
 			<result name="success">departmentheadTest.jsp</result>
@@ -27,6 +28,18 @@
 		     <result name="deptsearch" >/DeptManager/Notice/deptnotice.jsp</result>
 		     <result name="deleted" >/DeptManager/Notice/deptnotice.jsp</result>
 		     <result name="add">/DeptManager/Notice/deptnotice.jsp</result>
+		</action>
+			<action name="matchmessageAction_*" class="matchmessageAction" method="{1}">
+		     <result name="success">/DeptManager/Course/MatchOutline.jsp</result>
+		</action>
+		<action name="teaAction_*" class="teacherAction" method="{1}">
+			<result name="index">admin/teacher/index.jsp</result>
+			<result name="input">admin/teacher/add.jsp</result>
+			<result name="updatepwd">admin/teacher/index.jsp</result>
+			<result name="disp1"  type="chain">teaAction_showAllTeacher</result>
+			<result name="disp"  type="chain">teaAction_showAllTeacher</result>
+			
+			
 		</action>
 		<action name="upload" class="shiep.action.FileUploadAction" method="execute">
             <!-- 动态设置savePath的属性值 -->

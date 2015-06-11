@@ -1,18 +1,19 @@
 <%@ page language="java" import="shiep.daoImpl.*,shiep.action.*,shiep.bean.*,java.util.*" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+        <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
 <head>
     <title></title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../Css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="../Css/bootstrap-responsive.css" />
-    <link rel="stylesheet" type="text/css" href="../Css/style.css" />
-    <script type="text/javascript" src="../Js/jquery.js"></script>
-    <script type="text/javascript" src="../Js/jquery.sorted.js"></script>
-    <script type="text/javascript" src="../Js/bootstrap.js"></script>
-   <script type="text/javascript" src="../Js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="DeptManager/Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="DeptManager/Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="DeptManager/Css/style.css" />
+    <script type="text/javascript" src="DeptManager/Js/jquery.js"></script>
+    <script type="text/javascript" src="DeptManager/Js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="DeptManager/Js/bootstrap.js"></script>
+   <script type="text/javascript" src="DeptManager/Js/bootstrap.min.js"></script>
 </head>
 <body>
    <table class="table table-bordered table-hover definewidth m10">
@@ -21,17 +22,24 @@
     <tr>
         <th>课程号</th>
         <th>课程名称</th>
-        <th>状态</th>
+        <th>分配状态
+        <br>(0表示未分配，1表示已分配)
+        </th>
+        <th>填写状态
+         <br>(0表示未填写，1表示已填写)</th>
         <th>操作</th>
     </tr>
     </thead>
-	     <tr>
-            <td>6253591</td>
-            <td>计算机组成原理</td>
-            <td>未分配</td>
-            <td>
-            	
-            	<button class="btn btn-success btn-lg" data-toggle="modal" 
+	     <s:iterator value="#request.outline" id="outline">
+			<tr>
+				<td width="20%" align="center"><s:property value="#outline.cid" />
+				</td>
+				<td width="20%" align="center"><s:property value="#outline.cname" />
+				</td>
+				<td width="20%" align="center"><s:property value="#outline.deptstatus" />
+				</td>
+				<td width="20%" align="center"><s:property value="#outline.tstatus"/></td>
+            	<td width="20%"><button class="btn btn-success btn-lg" data-toggle="modal" 
    data-target="#myModal">
    分配教学大纲到教师
 </button>
@@ -55,10 +63,9 @@
          <div class="form-group">
       <label for="name">本系教师：</label>
       <select class="form-control">
-         <option>周平</option>
-         <option>刘小洛</option>
-         <option>章国文</option>
-         <option>李强斌</option>
+       <s:iterator value="#request.teacher" id="teacher">
+         <option value=<s:property value="#teacher.id" />><s:property value="#teacher.name" /></option>
+         </s:iterator>
       </select>
       </div>
          </div>
@@ -74,7 +81,8 @@
 </div><!-- /.modal -->
 </div>
             </td>
-        </tr>	
+       			</tr>
+	</s:iterator>
 </table>
 </body>
 </html>
