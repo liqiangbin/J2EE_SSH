@@ -77,7 +77,9 @@
 				</form></td>
 		
 				<td width="15%">							
-				<button class="btn btn-default" >	<a href="teaAction_delete?teacher.id=<s:property value="id" />">删除</a></button>
+				<button class="btn btn-default" >
+					<a href="teaAction_delete?teacher.id=<s:property value="id" />">删除</a>
+				</button>
 
 
 

@@ -69,7 +69,7 @@ public class CourseAction extends ActionSupport{
 	}
 	
 	public String delete() throws Exception{
-		System.out.println(course.getId());
+//		System.out.println(course.getId());
 		courseDao.deleteCourse(course.getId());
 		return "disp";
 	}
@@ -84,15 +84,15 @@ public class CourseAction extends ActionSupport{
 		return "disp1";
 	}
 	
-	public String search() throws Exception{
-		List<Course> list=(List<Course>)courseDao.searchBytable(course);
-		 Map request=(Map) ActionContext.getContext().get("request");
-         request.put("list", list); 
-		 return "search";
-	}
+
 	
 	public String showPage() throws Exception{
-		this.pageBean=courseService.queryForPage(1, page);
+		this.pageBean=courseService.queryForPage(2, page);
+		return "pagelist";
+	}
+	
+	public String search() throws Exception{
+		this.pageBean=courseService.search(2, page,course);
 		return "pagelist";
 	}
 

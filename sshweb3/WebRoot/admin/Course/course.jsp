@@ -21,16 +21,18 @@
 </head>
 <body>
  <div style="height: 50px">
-		<form class="form-inline definewidth m20" action="" method="post">  
+		<form class="form-inline definewidth m20" action="couAction_search" method="post">  
    	<div align="left" style="float: left;">
    		  搜索课程：
-    <input type="text" name="teacher.name" class="abc input-default" style="width: 150px;" placeholder="请输入关键字" value="">&nbsp;&nbsp;  
+    <input type="text" name="course.name" class="abc input-default" style="width: 150px;" placeholder="请输入关键字" value="">&nbsp;&nbsp;  
     <button type="submit" class="btn btn-primary" >查询</button>&nbsp;&nbsp; 
     </div>
 </form>
 
     <div align="left" style="float: right;">
-  <button class="btn btn-default"> <a href=""> 新增课程</a></button>
+ <button class="btn btn-primary btn-lg" data-toggle="modal"   data-target="#myModal">添加
+
+课程</button>
 &nbsp;&nbsp;&nbsp;&nbsp;
 <button type="button" class="btn btn-success" id="addnew">批量导入</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
 </div>
@@ -55,8 +57,12 @@
 								</td>
 								<td><s:property value="textbook" /></td>
 
-								<td><a href="couAction_delete.action?course.id=<s:property value="id" />">删除</a>
-								 <a href="edit.jsp">编辑</a></td>
+								<td>
+								
+								<button class="btn btn-default"> <a href="couAction_delete.action?course.id=<s:property value="id" />">删除</a></button>
+								
+								<button class="btn btn-default"> <a href="edit.jsp">编辑</a></button>
+								</td>
 							</tr>
 						</s:iterator>
 					</table>
@@ -90,9 +96,11 @@
 	</div>
 					
 					<div style="margin-left: 15px;margin-top: 10px">
-					<button class="btn btn-primary btn-lg" data-toggle="modal"   data-target="#myModal">添加课程</button>
+					
 			<!-- 模态框（Modal） -->
-   <div class="modal fade" id="myModal" tabindex="-1" role="dialog"    aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal fade" id="myModal" tabindex="-1" role="dialog"    aria-
+
+labelledby="myModalLabel" aria-hidden="true">
    <div class="modal-dialog">
       <div class="modal-content">
          <div class="modal-header">
@@ -137,7 +145,8 @@
          </div>
          </div><!-- /.modal-content -->
         </div><!-- /.modal -->
-		</div>		
+		</div>	
+		
 		</div>			
 </div>
 

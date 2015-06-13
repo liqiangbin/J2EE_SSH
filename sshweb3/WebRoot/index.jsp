@@ -42,8 +42,8 @@
 <script>
     BUI.use('admin/common/main',function(){
         var config = [{id:'1',menu:[{text:'课程信息',items:[
-        {id:'1',text:'课程信息管理',href:'couAction_showAllCourse.action'},
-        {id:'3',text:'开课信息管理',href:'copenAction_showAll'},
+        {id:'1',text:'课程信息管理',href:'couAction_showPage.action?page=1'},
+        {id:'3',text:'开课信息管理',href:'copenAction_showPage.action?page=1'},
         {id:'4',text:'课程大纲管理',href:'admin/Outline/index.jsp'},
         {id:'5',text:'分配课程大纲',href:'admin/Outline/distributeOutline.jsp'},
         
