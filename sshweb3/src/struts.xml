@@ -33,14 +33,17 @@
 		     <result name="success">/DeptManager/Course/MatchOutline.jsp</result>
 		     <result name="sort">/DeptManager/Course/MatchOutline.jsp</result>
 		</action>
+			<action name="courseoutlineAction_*" class="courseoutlineAction" method="{1}">
+		     <result name="nostatus">/DeptManager/Course/CourseOutline.jsp</result>
+		     <result name="checked">/DeptManager/Course/CourseOutline.jsp</result>
+		</action>
+		
 		<action name="teaAction_*" class="teacherAction" method="{1}">
 			<result name="index">admin/teacher/index.jsp</result>
 			<result name="input">admin/teacher/add.jsp</result>
 			<result name="updatepwd">admin/teacher/index.jsp</result>
 			<result name="disp1"  type="chain">teaAction_showAllTeacher</result>
 			<result name="disp"  type="chain">teaAction_showAllTeacher</result>
-			
-			
 		</action>
 		<action name="upload" class="shiep.action.FileUploadAction" method="execute">
             <!-- 动态设置savePath的属性值 -->

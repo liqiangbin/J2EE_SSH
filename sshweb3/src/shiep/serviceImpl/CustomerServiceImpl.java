@@ -14,7 +14,6 @@ import shiep.service.CustomerService;
 public class CustomerServiceImpl implements CustomerService {
 	@Resource
 	private CustomerDao customerdao;
-	
 	public CustomerDao getCustomerdao() {
 		return customerdao;
 	}
@@ -22,6 +21,8 @@ public class CustomerServiceImpl implements CustomerService {
 	public void setCustomerdao(CustomerDao customerdao) {
 		this.customerdao = customerdao;
 	}
+
+
 
 	@Override
 	 public PageBean queryForPage(int pageSize,int page){

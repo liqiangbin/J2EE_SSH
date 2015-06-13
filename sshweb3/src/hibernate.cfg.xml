@@ -16,5 +16,6 @@
 	<mapping resource="shiep/bean/Announce.hbm.xml" />
 	<mapping resource="shiep/bean/Matchmessage.hbm.xml" />
 	<mapping resource="shiep/bean/Teacher.hbm.xml" />
+	<mapping resource="shiep/bean/Courseoutline.hbm.xml" />
 </session-factory>
 </hibernate-configuration>
