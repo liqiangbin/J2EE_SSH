@@ -51,4 +51,14 @@ public class CourseoutlineAction  extends ActionSupport{
 		courseoutlinedao.checked(courseoutline);
 		return "checked";
 	}
+	
+	public String view() throws Exception{
+		System.out.println(courseoutline.getAddress());
+		String address=courseoutline.getAddress();
+		System.out.println(address);
+		 ActionContext context=ActionContext.getContext();
+		 context.getSession().put("outlineview",address );
+		return "view";
+	}
+	
 }

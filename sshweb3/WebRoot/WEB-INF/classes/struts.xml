@@ -43,6 +43,7 @@
 			<action name="courseoutlineAction_*" class="courseoutlineAction" method="{1}">
 		     <result name="nostatus">/DeptManager/Course/CourseOutline.jsp</result>
 		     <result name="checked">/DeptManager/Course/CourseOutline.jsp</result>
+		     <result name="view">Default.jsp</result>
 		</action>
 		
 		<action name="teachingprogressAction_*" class="teachingprogressAction" method="{1}">

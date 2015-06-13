@@ -95,7 +95,7 @@
       </div><!-- /.modal-content -->
 </div><!-- /.modal -->
 </div>
-    	&nbsp;&nbsp;<a href="#">在线预览</a>	&nbsp;&nbsp;
+    	&nbsp;&nbsp;<a href="courseoutlineAction_view?courseoutline.address=<%=list.get(i).getAddress()%>">在线预览</a>	&nbsp;&nbsp;
     		<a href="#">下载大纲</a>	
     	</td>
     </tr>
