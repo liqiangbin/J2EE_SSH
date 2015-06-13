@@ -44,8 +44,8 @@
         {id:'7',homePage: '9',menu:[{text:'课程信息维护',items:[
         {id:'9',text:'课程大纲分配',href:'matchmessageAction_findbydept?matchmessage.did=<%=person.get(0).getDid()%>'},
         {id:'3',text:'课程大纲审核',href:'courseoutlineAction_findByStatus?courseoutline.did=<%=person.get(0).getDid()%>'},
-         {id:'4',text:'教学进度表',href:'DeptManager/Course/TeachingProgress.jsp'},
-          {id:'6',text:'实验进度表',href:'DeptManager/Course/TestProgress.jsp'},
+         {id:'4',text:'教学进度表',href:'teachingprogressAction_findByStatus?teachingprogress.did=<%=person.get(0).getDid()%>'},
+          {id:'6',text:'实验进度表',href:'testprogressAction_findByStatus?testprogress.did=<%=person.get(0).getDid()%>'},
            {id:'8',text:'信息统计',href:'DeptManager/Course/MessageCount.jsp'}
         ]}]}];
         new PageUtil.MainPage({

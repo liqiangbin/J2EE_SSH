@@ -77,7 +77,6 @@ public class CourseopenAction extends ActionSupport{
 	public String delete() throws Exception{
 		System.out.println(courseopen.getCid());
 		courseOpenDao.deleteCourseOpenInfo(courseopen.getCid());
-		System.out.println("####");
 		return "disp";
 	}
 	

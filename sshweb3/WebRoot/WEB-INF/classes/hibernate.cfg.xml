@@ -20,5 +20,8 @@
 	<mapping resource="shiep/bean/Super.hbm.xml" />
 	<mapping resource="shiep/bean/Course.hbm.xml" />
 	<mapping resource="shiep/bean/Courseopen.hbm.xml" />
+	<mapping resource="shiep/bean/Teachingprogress.hbm.xml" />
+	<mapping resource="shiep/bean/Testprogress.hbm.xml" />
+	
 </session-factory>
 </hibernate-configuration>

@@ -6,21 +6,21 @@
 <head>
     <title></title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../Css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="../Css/bootstrap-responsive.css" />
-    <link rel="stylesheet" type="text/css" href="../Css/style.css" />
-    <script type="text/javascript" src="../Js/jquery.js"></script>
-    <script type="text/javascript" src="../Js/jquery.sorted.js"></script>
-    <script type="text/javascript" src="../Js/bootstrap.js"></script>
-<script type="text/javascript" src="../Js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="DeptManager/Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="DeptManager/Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="DeptManager/Css/style.css" />
+    <script type="text/javascript" src="DeptManager/Js/jquery.js"></script>
+    <script type="text/javascript" src="DeptManager/Js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="DeptManager/Js/bootstrap.js"></script>
+<script type="text/javascript" src="DeptManager/Js/bootstrap.min.js"></script>
 </head>
 <body>
    <table class="table table-bordered table-hover definewidth m10">
-	<caption align="absmiddle"><h2>管理教学进度表信息</h2></caption>
+	<caption align="absmiddle"><h2>待审核教学进度表</h2></caption>
     <thead>
     <tr>
     	<th>进度表名称</th>
-        <th>课程名称</th>
+        <th>课程编号</th>
         <th>学期</th>
         <th>填写教师</th>
         <th>审核状态</th>
@@ -28,23 +28,38 @@
         <th>操作</th>
     </tr>
     </thead>
+     <% List<Teachingprogress> list=(List<Teachingprogress>)session.getAttribute("NoStatusTeaching"); %>
+    <%for(int i=0;i<list.size();i++){ %>
     <tr>
-    	<td>J2EE编程教学进度表</td>
-    	<td>J2EE编程</td>
-    	<td>2010-2011第一学期</td>
-    	<td>章国文</td>
-    	<td>未通过</td>
-    	<td>教学进度表不详细</td>
-    	<td align="center"><button type="button" class="btn btn-success"><a href="#">通过审核</a></button>
+    	<td><%=list.get(i).getName() %></td>
+    	<td><%=list.get(i).getCid() %></td>
+    	<td><%=list.get(i).getTerm() %></td>
+    	<td><%=list.get(i).getTname() %></td>
+    	<td>未审核</td>
+    	<td width="20%"><%=list.get(i).getMessage() %></td>		
+    	<form action="teachingprogressAction_checked" method="post">
+    		<input type="hidden" name="teachingprogress.id" value="<%=list.get(i).getId()%>">
+    		<input type="hidden" name="teachingprogress.cid" value="<%=list.get(i).getCid()%>">
+    		<input type="hidden" name="teachingprogress.tid" value="<%=list.get(i).getTid()%>">
+<input type="hidden" name="teachingprogress.tname" value="<%=list.get(i).getTname()%>">
+<input type="hidden" name="teachingprogress.name" value="<%=list.get(i).getName()%>">
+<input type="hidden" name="teachingprogress.did" value="<%=list.get(i).getDid()%>">
+<input type="hidden" name="teachingprogress.address" value="<%=list.get(i).getAddress()%>">
+<input type="hidden" name="teachingprogress.term" value="<%=list.get(i).getTerm()%>">
+<input type="hidden" name="teachingprogress.status" value="<%="1"%>">
+<input type="hidden" name="teachingprogress.message" value="<%=list.get(i).getMessage()%>">
+    	<td align="center"><button type="submit" class="btn btn-success">通过审核</button>
+    		</form>
+    		
     		
     		
     		          	<button class="btn btn-warning btn-lg" data-toggle="modal" 
-   data-target="#myModal">
+   data-target="#<%=i%>">
    审核意见
 </button>
 
 <!-- 模态框（Modal） -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+<div class="modal fade" id="<%=i%>" tabindex="-1" role="dialog" 
    aria-labelledby="myModalLabel" aria-hidden="true">
    <div class="modal-dialog">
       <div class="modal-content">
@@ -57,26 +72,39 @@
                请填写教学进度表审核信息
             </h4>
          </div>
+         <form action="teachingprogressAction_checked" method="post">
+        <input type="hidden" name="teachingprogress.id" value="<%=list.get(i).getId()%>">
+    		<input type="hidden" name="teachingprogress.cid" value="<%=list.get(i).getCid()%>">
+    		<input type="hidden" name="teachingprogress.tid" value="<%=list.get(i).getTid()%>">
+<input type="hidden" name="teachingprogress.tname" value="<%=list.get(i).getTname()%>">
+<input type="hidden" name="teachingprogress.name" value="<%=list.get(i).getName()%>">
+<input type="hidden" name="teachingprogress.did" value="<%=list.get(i).getDid()%>">
+<input type="hidden" name="teachingprogress.address" value="<%=list.get(i).getAddress()%>">
+<input type="hidden" name="teachingprogress.term" value="<%=list.get(i).getTerm()%>">
+<input type="hidden" name="teachingprogress.status" value="<%=list.get(i).getStatus()%>">
+
+         
          <div class="modal-body">
-         	<textarea name="notice" cols="100" rows="5"></textarea>
+         	<textarea name="teachingprogress.message" cols="100" rows="5"></textarea>
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-default" 
                data-dismiss="modal">取消
             </button>
-            <button type="button" class="btn btn-success">
+            <button type="submit" class="btn btn-success">
                提交审核信息
             </button>
          </div>
+         </form>
       </div><!-- /.modal-content -->
 </div><!-- /.modal -->
 </div>
     	&nbsp;&nbsp;<a href="#">在线预览</a>	&nbsp;&nbsp;
-    		<a href="#">下载大纲</a>	
+    		<a href="#">下载教学进度表</a>	
     	</td>
     	
     </tr>
-	     
+	    	<%} %> 
 </table>
 </body>
 </html>

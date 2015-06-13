@@ -45,6 +45,15 @@
 		     <result name="checked">/DeptManager/Course/CourseOutline.jsp</result>
 		</action>
 		
+		<action name="teachingprogressAction_*" class="teachingprogressAction" method="{1}">
+		     <result name="nostatus">/DeptManager/Course/TeachingProgress.jsp</result>
+		     <result name="checked">/DeptManager/Course/TeachingProgress.jsp</result>
+		</action>
+		<action name="testprogressAction_*" class="testprogressAction" method="{1}">
+		     <result name="nostatus">/DeptManager/Course/TestProgress.jsp</result>
+		     <result name="checked">/DeptManager/Course/TestProgress.jsp</result>
+		</action>
+		
 		
 		<action name="teaAction_*" class="teacherAction" method="{1}">
 			<result name="index">admin/teacher/index.jsp</result>
