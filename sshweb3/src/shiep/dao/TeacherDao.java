@@ -2,6 +2,7 @@ package shiep.dao;
 
 import java.util.List;
 
+import shiep.bean.Announce;
 import shiep.bean.PageBean;
 import shiep.bean.Teacher;
 
@@ -13,6 +14,6 @@ public interface TeacherDao {
 	public void updatePwd(Teacher tea);
 	public List queryForPage(final String hql,final int offset,final int length);
 	public int getAllRowCount(String hql);
-	//------------------
 	public List<Teacher> showTeacherBydid(String did);
+	
 }

@@ -23,7 +23,7 @@ request.removeAttribute("username");
 			</div>
 			<div class="login-content ">
 			<div class="form">
-			<form action="deptheadAction_login" method="post" name="form" id="form">
+			<form action="loginAction_login" method="post" name="form" id="form">
 				<div class="form-group">
 					<div class="col-xs-12  ">
 						<div class="input-group">

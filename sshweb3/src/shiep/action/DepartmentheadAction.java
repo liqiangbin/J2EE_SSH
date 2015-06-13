@@ -63,10 +63,10 @@ public class DepartmentheadAction  extends ActionSupport{
 		 departmentheaddao.updatemyself(departmenthead);
 		 return "updated";
 	}
-	public String login() throws Exception{
-		if(departmentheaddao.login(username, password)&&"系主任登录".equals(enter)){
-			//System.out.println(departmentheaddao.login(username, password));
-		return  "success";}
-		return  "false";
-	}
+//	public String login() throws Exception{
+//		if(departmentheaddao.login(username, password)&&"系主任登录".equals(enter)){
+//			//System.out.println(departmentheaddao.login(username, password));
+//		return  "success";}
+//		return  "false";
+//	}
 }

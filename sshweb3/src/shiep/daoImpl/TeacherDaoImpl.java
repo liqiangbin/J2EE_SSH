@@ -10,6 +10,7 @@ import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import shiep.bean.Announce;
 import shiep.bean.Teacher;
 import shiep.dao.BaseDao;
 import shiep.dao.TeacherDao;
@@ -53,13 +54,13 @@ public class TeacherDaoImpl extends BaseDao implements TeacherDao  {
 	@Override
 	@Transactional
 	public void updatePwd(Teacher teacher) {
-		Teacher tea=(Teacher)this.getHibernateTemplate().get(Teacher.class, teacher);
-		if(tea!=null)
-			this.getHibernateTemplate().saveOrUpdate(tea);
+		//Teacher tea=(Teacher)this.getHibernateTemplate().get(Teacher.class, teacher);
+		//if(tea!=null)
+			this.getHibernateTemplate().saveOrUpdate(teacher);
 		
-	}
-
 	
+
+	}
 	@Override
 	public List queryForPage(final String hql, final int offset, final int length) {
 		List list=getHibernateTemplate().executeFind(new HibernateCallback() {
@@ -88,4 +89,6 @@ public class TeacherDaoImpl extends BaseDao implements TeacherDao  {
 	public List<Teacher> showTeacherBydid(String did) {
 		return (List<Teacher>)getHibernateTemplate().find("from shiep.bean.Teacher where did='"+did+"'");
 	}
+
+	
 }

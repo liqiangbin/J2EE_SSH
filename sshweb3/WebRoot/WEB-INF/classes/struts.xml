@@ -21,6 +21,13 @@
 			<result name="success" >/DeptManager/index.jsp</result>
 			<result name="false" >login.jsp</result>
 		</action>
+		<action name="loginAction_*" class="loginAction" method="{1}">
+			<result name="deptsuccess" >/DeptManager/index.jsp</result>
+			<result name="adminsuccess" >/index.jsp</result>
+			<result name="teachersuccess" >/Teacher/teacherindex.jsp</result>
+			<result name="false" >login.jsp</result>
+			
+		</action>
 		<action name="announceAction_*" class="announceAction" method="{1}">
 		    <result name="instAnnounce" >/DeptManager/Notice/collegeNotice.jsp</result>
 		     <result name="search" >/DeptManager/Notice/collegeNotice.jsp</result>
@@ -38,13 +45,29 @@
 		     <result name="checked">/DeptManager/Course/CourseOutline.jsp</result>
 		</action>
 		
+		
 		<action name="teaAction_*" class="teacherAction" method="{1}">
 			<result name="index">admin/teacher/index.jsp</result>
-			<result name="input">admin/teacher/add.jsp</result>
+			<result name="input">admin/teacher/index.jsp</result>
 			<result name="updatepwd">admin/teacher/index.jsp</result>
-			<result name="disp1"  type="chain">teaAction_showAllTeacher</result>
-			<result name="disp"  type="chain">teaAction_showAllTeacher</result>
+			<result name="pagelist">admin/teacher/index.jsp</result>
+			<result name="add"  type="redirectAction">teaAction_showAllTeacher</result>
+			<result name="disp"  type="redirectAction">teaAction_showAllTeacher</result>
 		</action>
+		
+		
+		
+		<action name="couAction_*"  class="courseAction" method="{1}" >
+		 <result name="index">admin/Course/course.jsp</result>
+		 <result name="input">admin/Course/course.jsp</result>
+		 <result name="pagelist">admin/Course/course.jsp</result>
+		 	<result name="search">admin/Course/course.jsp</result>
+		<result name="disp" type="chain">couAction_showAllCourse</result>
+		<result name="disp1" type="chain">couAction_showAllCourse</result>
+		</action>
+		
+		
+		
 		<action name="upload" class="shiep.action.FileUploadAction" method="execute">
             <!-- 动态设置savePath的属性值 -->
             <param name="savePath">/images</param>
