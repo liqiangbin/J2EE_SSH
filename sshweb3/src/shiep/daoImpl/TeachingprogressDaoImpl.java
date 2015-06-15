@@ -59,4 +59,14 @@ public class TeachingprogressDaoImpl extends BaseDao implements Teachingprogress
 		return getHibernateTemplate().find(hql).size();
 	}
 
+	@Override
+	public List<Teachingprogress> findall() {
+		try{
+			String queryStr="from shiep.bean.Teachingprogress";
+			return (List<Teachingprogress>)getHibernateTemplate().find(queryStr);
+		}catch(RuntimeException e){
+			throw e;
+		}
+	}
+
 }

@@ -9,5 +9,7 @@ public interface AllmessageService {
 	public PageBean queryForPageOutline(int pageSize,int currentPage,int status,String term);
 	public PageBean queryForPageTeaching(int pageSize,int currentPage,int status,String term);
 	public PageBean queryForPageTest(int pageSize,int currentPage,int status,String term);
-
+	public PageBean queryForPageOutline(int pageSize,int currentPage,int status,String term,String dept);
+	public PageBean queryForPageTeaching(int pageSize,int currentPage,int status,String term,String dept);
+	public PageBean queryForPageTest(int pageSize,int currentPage,int status,String term,String dept);
 }

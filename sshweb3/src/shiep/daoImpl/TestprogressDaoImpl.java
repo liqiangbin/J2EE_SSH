@@ -60,6 +60,16 @@ public class TestprogressDaoImpl extends BaseDao implements TestprogressDao {
 	public int getAllRowCount(String hql) {
 		return getHibernateTemplate().find(hql).size();
 	}
+
+	@Override
+	public List<Testprogress> findall() {
+		try{
+			String queryStr="from shiep.bean.Testprogress ";
+			return (List<Testprogress>)getHibernateTemplate().find(queryStr);
+		}catch(RuntimeException e){
+			throw e;
+		}
+	}
 	
 
 }

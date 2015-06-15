@@ -1,16 +1,17 @@
 package shiep.action;
 
 import java.util.List;
-import java.util.Map;
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 
-import shiep.bean.Announce;
-import shiep.bean.Departmenthead;
+import shiep.bean.Course;
+import shiep.bean.Depart;
 import shiep.bean.Matchmessage;
 import shiep.bean.Teacher;
+import shiep.dao.CourseDao;
+import shiep.dao.DepartDao;
 import shiep.dao.MatchmessageDao;
 import shiep.dao.TeacherDao;
 
@@ -22,10 +23,31 @@ import com.opensymphony.xwork2.ActionSupport;
 public class MatchmessageAction extends ActionSupport{
 	private Matchmessage matchmessage;
 	private Teacher teacher;
+	private Depart depart;
+	private Course course;
+	@Resource
+	private CourseDao coursedao;
+	
+	@Resource
+	private DepartDao departDao;
 	@Resource
 	private MatchmessageDao matchmessagedao;
 	@Resource
 	private TeacherDao teacherDao;
+	
+	
+	public Course getCourse() {
+		return course;
+	}
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+	public CourseDao getCoursedao() {
+		return coursedao;
+	}
+	public void setCoursedao(CourseDao coursedao) {
+		this.coursedao = coursedao;
+	}
 	public Matchmessage getMatchmessage() {
 		return matchmessage;
 	}
@@ -39,11 +61,25 @@ public class MatchmessageAction extends ActionSupport{
 		this.matchmessagedao = matchmessagedao;
 	}
 	
+	public DepartDao getDepartDao() {
+		return departDao;
+	}
+	public void setDepartDao(DepartDao departDao) {
+		this.departDao = departDao;
+	}
 	public Teacher getTeacher() {
 		return teacher;
 	}
 	public void setTeacher(Teacher teacher) {
 		this.teacher = teacher;
+	}
+	
+	
+	public Depart getDepart() {
+		return depart;
+	}
+	public void setDepart(Depart depart) {
+		this.depart = depart;
 	}
 	public TeacherDao getTeacherDao() {
 		return teacherDao;
@@ -63,5 +99,26 @@ public class MatchmessageAction extends ActionSupport{
 		matchmessagedao.sortTeacher(matchmessage);
 		 return "success";
 	}
+	
+	public String findall() throws Exception{
+		List<Matchmessage> list= matchmessagedao.findAll();
+		List<Depart> list1= departDao.findAllDepart();
+		List<Teacher> tlist= teacherDao.showAllTeacher();
+		List<Course> courselist= coursedao.showAllCourseInfo();
+		 ActionContext context=ActionContext.getContext();
+		context.getSession().put("outline", list);
+		context.getSession().put("depart", list1);
+		context.getSession().put("teacher", tlist);
+		context.getSession().put("course", courselist);
+		
+		 return "findall";
+	}
+	public String save(){
+		List<Course> c=coursedao.showone(matchmessage.getCid());
+		matchmessage.setCname(c.get(0).getName());
+		matchmessagedao.save(matchmessage);
+		return "matchmessage";
+	}
+	
 
 }

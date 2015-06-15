@@ -37,10 +37,14 @@ public class TeachingprogressAction  extends ActionSupport{
 		 return "nostatus";
 	}
 	public String checked() throws Exception{
-//		System.out.println(teachingprogress.getStatus());
-//		System.out.println(teachingprogress.getMessage());
 		teachingprogressdao.checked(teachingprogress);
 		return "checked";
 	}
-
+	public String findall() throws Exception{
+		
+		 ActionContext context=ActionContext.getContext();
+		 List<Teachingprogress> list=(List<Teachingprogress>)teachingprogressdao.findall();
+		 context.getSession().put("NoStatusTeaching", list);
+		 return "all";
+	}
 }

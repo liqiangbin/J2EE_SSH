@@ -7,29 +7,37 @@
 <head>
     <title></title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="DeptManager/Css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="DeptManager/Css/bootstrap-responsive.css" />
-    <link rel="stylesheet" type="text/css" href="DeptManager/Css/style.css" />
-    <script type="text/javascript" src="DeptManager/Js/jquery.js"></script>
-    <script type="text/javascript" src="DeptManager/Js/jquery.sorted.js"></script>
-    <script type="text/javascript" src="DeptManager/Js/bootstrap.js"></script>
-  <script type="text/javascript" src="DeptManager/Js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="admin/Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="admin/Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="admin/Css/style.css" />
+    <script type="text/javascript" src="admin/Js/jquery.js"></script>
+    <script type="text/javascript" src="admin/Js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="admin/Js/bootstrap.js"></script>
+  <script type="text/javascript" src="admin/Js/bootstrap.min.js"></script>
 </head>
 <body>
-	<form action="allmessageAction_showPage" method="post">
+	<form action="allmessageAction_adminshowPage" method="post">
 		<table class="table" width="60%">
 			<tr>
 				 <div class="form-group">
 				<td>
-					
       <label for="name">选择学期</label>
       <select class="form-control" name="term">
         <% List<Term> termlist=(List<Term>)session.getAttribute("termlist");
         for(int tl=0;tl<termlist.size();tl++) {%>
          <option value="<%=termlist.get(tl).getDesc()%>"><%=termlist.get(tl).getDesc()%></option>
-         <%} %>
+         <%}%>
       </select>
 				</td>
+				<td>
+			 <label for="name">选择系别</label>
+      <select class="form-control" name="dept">
+        <% List<Depart> departlist=(List<Depart>)session.getAttribute("departlist");
+        for(int i=0;i<departlist.size();i++){%>
+         <option value="<%=departlist.get(i).getId()%>"><%=departlist.get(i).getName()%></option>
+         <%} %>
+      </select>	
+      		</td>
 				<td>
 					
       <label for="name">选择类型</label>
@@ -55,9 +63,7 @@
 			</tr>
 		</table>
 	</form>
-	
-	
-   <table class="table table-bordered table-hover definewidth m10">
+	 <table class="table table-bordered table-hover definewidth m10">
 	<caption align="absmiddle"><h2>信息统计如下</h2></caption>
     <thead>
     <tr>
@@ -70,7 +76,7 @@
         <th width="20%">操作</th>
     </tr>
     </thead>
-   <% if(session.getAttribute("messagetype").equals("1")) {%>
+   <% if(session.getAttribute("messagetypeadmin").equals("1")) {%>
     <s:iterator value="pageBean.list">
     
    <tr>
@@ -88,13 +94,16 @@
  </s:if>
    		</td> 
    					<td><s:property value="message" /></td>
-   					<td><button type="button" class="btn btn-success"><a href="">预览</a></button>&nbsp;&nbsp;
-   					<button type="button" class="btn btn-success"><a href="">下载</a></button>
+   					<td><button type="button" class="btn btn-
+
+success"><a href="">预览</a></button>&nbsp;&nbsp;
+   					<button type="button" class="btn btn-success"><a 
+
+href="">下载</a></button>
    					</td>
    </tr>
    </s:iterator>
    <table align="center">
-
    <tr>
    <td ><h5>
 	  共<s:property value="pageBean.allRow"/> 条记录 &nbsp;
@@ -107,11 +116,17 @@
         </s:if>
         <s:else>
             <a href="allmessageAction_showPage.action?page=1">第一页</a>&nbsp;
-            <a href="allmessageAction_showPage.action?page=<s:property value="%{pageBean.currentPage-1}"/>">上一页</a>&nbsp;
+            <a href="allmessageAction_showPage.action?page=<s:property 
+
+value="%{pageBean.currentPage-1}"/>">上一页</a>&nbsp;
         </s:else>
         <s:if test="%{pageBean.currentPage != pageBean.totalPage}">
-            <a href="allmessageAction_showPage.action?page=<s:property value="%{pageBean.currentPage+1}"/>">下一页</a>&nbsp;
-            <a href="allmessageAction_showPage.action?page=<s:property value="pageBean.totalPage"/>">最后一页</a>
+            <a href="allmessageAction_showPage.action?page=<s:property 
+
+value="%{pageBean.currentPage+1}"/>">下一页</a>&nbsp;
+            <a href="allmessageAction_showPage.action?page=<s:property 
+
+value="pageBean.totalPage"/>">最后一页</a>
         </s:if>
         <s:else>
             下一页 最后一页
@@ -121,7 +136,7 @@
         </tr>
       
         </table>
-   <%} else if(session.getAttribute("messagetype").equals("2")) {%>
+   <%}else if(session.getAttribute("messagetypeadmin").equals("2")) {%>
     <s:iterator value="pageBean.list">
     
    <tr>
@@ -137,8 +152,12 @@
  </s:if>
    		</td> 
    			<td><s:property value="message" /></td>
-   					<td><button type="button" class="btn btn-success"><a href="">预览</a></button>&nbsp;&nbsp;
-   					<button type="button" class="btn btn-success"><a href="">下载</a></button>
+   					<td><button type="button" class="btn btn-
+
+success"><a href="">预览</a></button>&nbsp;&nbsp;
+   					<button type="button" class="btn btn-success"><a 
+
+href="">下载</a></button>
    					</td>
    </tr>
    </s:iterator>
@@ -156,11 +175,17 @@
         </s:if>
         <s:else>
             <a href="allmessageAction_showPage.action?page=1">第一页</a>&nbsp;
-            <a href="allmessageAction_showPage.action?page=<s:property value="%{pageBean.currentPage-1}"/>">上一页</a>&nbsp;
+            <a href="allmessageAction_showPage.action?page=<s:property 
+
+value="%{pageBean.currentPage-1}"/>">上一页</a>&nbsp;
         </s:else>
         <s:if test="%{pageBean.currentPage != pageBean.totalPage}">
-            <a href="allmessageAction_showPage.action?page=<s:property value="%{pageBean.currentPage+1}"/>">下一页</a>&nbsp;
-            <a href="allmessageAction_showPage.action?page=<s:property value="pageBean.totalPage"/>">最后一页</a>
+            <a href="allmessageAction_showPage.action?page=<s:property 
+
+value="%{pageBean.currentPage+1}"/>">下一页</a>&nbsp;
+            <a href="allmessageAction_showPage.action?page=<s:property 
+
+value="pageBean.totalPage"/>">最后一页</a>
         </s:if>
         <s:else>
             下一页 最后一页
@@ -171,9 +196,8 @@
       
         </table>
         
-   <%}else if(session.getAttribute("messagetype").equals("3")) {%>
+   <%}else if(session.getAttribute("messagetypeadmin").equals("3")) {%>
        <s:iterator value="pageBean.list">
-    
    <tr>
    	<td><s:property value="name" /></td>
    		<td><s:property value="term" /></td>
@@ -188,8 +212,12 @@
  </s:if>
    		</td> 
    			<td><s:property value="message" /></td>
-   					<td><button type="button" class="btn btn-success"><a href="">预览</a></button>&nbsp;&nbsp;
-   					<button type="button" class="btn btn-success"><a href="">下载</a></button>
+   					<td><button type="button" class="btn btn-
+
+success"><a href="">预览</a></button>&nbsp;&nbsp;
+   					<button type="button" class="btn btn-success"><a 
+
+href="">下载</a></button>
    					</td>
    </tr>
    </s:iterator>
@@ -207,11 +235,17 @@
         </s:if>
         <s:else>
             <a href="allmessageAction_showPage.action?page=1">第一页</a>&nbsp;
-            <a href="allmessageAction_showPage.action?page=<s:property value="%{pageBean.currentPage-1}"/>">上一页</a>&nbsp;
+            <a href="allmessageAction_showPage.action?page=<s:property 
+
+value="%{pageBean.currentPage-1}"/>">上一页</a>&nbsp;
         </s:else>
         <s:if test="%{pageBean.currentPage != pageBean.totalPage}">
-            <a href="allmessageAction_showPage.action?page=<s:property value="%{pageBean.currentPage+1}"/>">下一页</a>&nbsp;
-            <a href="allmessageAction_showPage.action?page=<s:property value="pageBean.totalPage"/>">最后一页</a>
+            <a href="allmessageAction_showPage.action?page=<s:property 
+
+value="%{pageBean.currentPage+1}"/>">下一页</a>&nbsp;
+            <a href="allmessageAction_showPage.action?page=<s:property 
+
+value="pageBean.totalPage"/>">最后一页</a>
         </s:if>
         <s:else>
             下一页 最后一页
@@ -228,15 +262,16 @@
    			<td>暂无</td>
    				<td>暂无</td>
    					<td>暂无</td>
-   					<td><button type="button" class="btn btn-success"><a href="">预览</a></button>&nbsp;&nbsp;
-   					<button type="button" class="btn btn-success"><a href="">下载</a></button></td>
+   					<td><button type="button" class="btn btn-
+
+success"><a href="">预览</a></button>&nbsp;&nbsp;
+   					<button type="button" class="btn btn-success"><a 
+
+href="">下载</a></button></td>
    </tr>
-   <%} %> 
-   
- 
-   
-   
-	     
+   <%} %>  
 </table>
+	
+
 </body>
 </html>

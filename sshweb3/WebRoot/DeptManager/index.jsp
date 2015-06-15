@@ -55,7 +55,7 @@ session.setAttribute("messagetype",s);
         {id:'3',text:'课程大纲审核',href:'courseoutlineAction_findByStatus?courseoutline.did=<%=person.get(0).getDid()%>'},
          {id:'4',text:'教学进度表审核',href:'teachingprogressAction_findByStatus?teachingprogress.did=<%=person.get(0).getDid()%>'},
           {id:'6',text:'实验进度表审核',href:'testprogressAction_findByStatus?testprogress.did=<%=person.get(0).getDid()%>'},
-           {id:'8',text:'信息统计',href:'DeptManager/Course/MessageCount.jsp'}
+           {id:'8',text:'信息统计',href:'allmessageAction_top'}
         ]}]}];
         new PageUtil.MainPage({
             modulesConfig : config

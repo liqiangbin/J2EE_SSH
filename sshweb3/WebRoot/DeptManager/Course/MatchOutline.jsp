@@ -31,13 +31,14 @@
     </tr>
     </thead>
     <% List<Matchmessage> list =(List<Matchmessage>)session.getAttribute("outline");
+    List<Teacher> tlist=(List<Teacher>)session.getAttribute("teacher");
     for(int i=0;i<list.size();i++){
      %>
 	    
 	     
 			<tr>
 				<td width="15%" align="center"><%=list.get(i).getCid() %></td>
-				<td width="15%" align="center"><%=list.get(i).getCname() %>
+				<td width="15%" align="center"><%=list.get(i).getCname()%>
 				</td>
 				<td width="15%" align="center">
 				<% if(list.get(i).getDeptstatus()==0){%>
@@ -54,14 +55,15 @@
 				<%} %>
 				</td>
 				<td width="15%" align="center">
-				<%List<Teacher> t =(List<Teacher>)session.getAttribute("teacher");
-				String name=null;
-				for(int x=0;x<t.size();x++){
-				if(list.get(i).getTid().equals(t.get(x).getId()))
-				name=t.get(x).getName();
-				}
-				 %>
-				 <%=name %>
+					<% String k=list.get(i).getTid();%>
+				<%String tname=null;
+				for(int d=0;d<tlist.size();d++){
+				if(tlist.get(d).getId().equals(k)){
+				tname=tlist.get(d).getName();%>
+				<%=tname %>
+				<%
+				}%>
+				<%}%>
 				 </td>
 				<td width="20%"><button class="btn btn-success btn-lg" data-toggle="modal" 
    data-target="#<%=i%>">

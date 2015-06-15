@@ -43,5 +43,11 @@ public class TestprogressAction  extends ActionSupport{
 		testprogressdao.checked(testprogress);
 		return "checked";
 	}
-
+	public String findall() throws Exception{
+		
+		 ActionContext context=ActionContext.getContext();
+		 List<Testprogress> list=(List<Testprogress>)testprogressdao.findall();
+		 context.getSession().put("NoStatusTest", list);
+		 return "all";
+	}
 }

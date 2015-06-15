@@ -65,12 +65,12 @@ public class CourseopenAction extends ActionSupport{
 	}
 	
 	public String showPage() throws Exception{
-		this.pageBean=courseopenService.queryForPage(2, page);
+		this.pageBean=courseopenService.queryForPage(5, page);
 		return "pagelist";
 	}
 	
 	public String search() throws Exception{
-		this.pageBean=courseopenService.search(2, page,courseopen);
+		this.pageBean=courseopenService.search(5, page,courseopen);
 		return "pagelist";
 	}
 	

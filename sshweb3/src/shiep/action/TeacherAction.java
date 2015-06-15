@@ -99,11 +99,11 @@ public class TeacherAction extends ActionSupport{
 		return "disp";
 	}
 	public String showPage() throws Exception{
-		this.pageBean=teacherService.queryForPage(3, page);
+		this.pageBean=teacherService.queryForPage(5, page);
 		return "pagelist";
 	}
 	public String search() throws Exception{
-		this.pageBean=teacherService.search(3, page,teacher);
+		this.pageBean=teacherService.search(5, page,teacher);
 		return "pagelist";
 	}
 

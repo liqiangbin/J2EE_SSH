@@ -41,6 +41,8 @@
 			<action name="matchmessageAction_*" class="matchmessageAction" method="{1}">
 		     <result name="success">/DeptManager/Course/MatchOutline.jsp</result>
 		     <result name="sort">/DeptManager/Course/MatchOutline.jsp</result>
+		     <result name="findall">/admin/Outline/distributeOutline.jsp</result>
+		     <result name="matchmessage" type="chain">matchmessageAction_findall</result>
 		</action>
 		
 		<action name="sortprogressAction_*" class="sortprogressAction" method="{1}">
@@ -60,10 +62,12 @@
 		<action name="teachingprogressAction_*" class="teachingprogressAction" method="{1}">
 		     <result name="nostatus">/DeptManager/Course/TeachingProgress.jsp</result>
 		     <result name="checked">/DeptManager/Course/TeachingProgress.jsp</result>
+		     <result name="all">/admin/Progress/teachingprogress.jsp</result>
 		</action>
 		<action name="testprogressAction_*" class="testprogressAction" method="{1}">
 		     <result name="nostatus">/DeptManager/Course/TestProgress.jsp</result>
 		     <result name="checked">/DeptManager/Course/TestProgress.jsp</result>
+		     <result name="all">/admin/Progress/Testprogress.jsp</result>
 		</action>
 		
 		
@@ -93,9 +97,14 @@
 		
 		</action>
 		<action name="allmessageAction_*" class="allmessageAction" method="{1}">
-			<result name="outlinepagelist">MessageCount.jsp</result>
-			<result name="teachingpagelist">MessageCount.jsp</result>
-			<result name="testpagelist">MessageCount.jsp</result>
+			<result name="outlinepagelist">DeptManager/Course/MessageCount.jsp</result>
+			<result name="teachingpagelist">DeptManager/Course/MessageCount.jsp</result>
+			<result name="testpagelist">DeptManager/Course/MessageCount.jsp</result>
+			<result name="top">DeptManager/Course/MessageCount.jsp</result>
+			<result name="topadmin">admin/Progress/MessageCount.jsp</result>
+			<result name="outlinepagelistadmin">admin/Progress/MessageCount.jsp</result>
+			<result name="teachingpagelistadmin">admin/Progress/MessageCount.jsp</result>
+			<result name="testpagelistadmin">admin/Progress/MessageCount.jsp</result>
 		</action>
 		
 

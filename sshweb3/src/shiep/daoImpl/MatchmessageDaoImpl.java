@@ -29,4 +29,24 @@ public class MatchmessageDaoImpl extends BaseDao implements MatchmessageDao {
 				ex.printStackTrace();
 			}
 	}
+	@Override
+	public List<Matchmessage> findAll() {
+		
+		try{
+			String queryStr="from shiep.bean.Matchmessage";
+			return (List<Matchmessage>)getHibernateTemplate().find(queryStr);
+		}catch(RuntimeException e){
+			throw e;
+		}
+	}
+	@Override
+	@Transactional
+	public void save(Matchmessage matchmessage) {
+		try{
+		       this.getHibernateTemplate().save(matchmessage);
+			}catch(Exception ex){
+				ex.printStackTrace();
+			}
+		
+	}
 }

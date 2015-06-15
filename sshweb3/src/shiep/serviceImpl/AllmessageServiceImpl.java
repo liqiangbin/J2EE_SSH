@@ -117,6 +117,75 @@ public class AllmessageServiceImpl  implements AllmessageService{
         return pageBean;
 	}
 
+	@Override
+	public PageBean queryForPageOutline(int pageSize, int page,
+			int status, String term, String dept) {
+		final String hql = "from shiep.bean.Courseoutline where did='"+dept+"'and status='"+status+"' and term='"+term+"'";        //鏌ヨ璇彞
+        int allRow = courseoutlinedao.getAllRowCount(hql);    //鎬昏褰曟暟
+        int totalPage = PageBean.countTotalPage(pageSize, allRow);    //鎬婚〉鏁�
+        final int offset = PageBean.countOffset(pageSize, page);    //褰撳墠椤靛紑濮嬭褰�
+        final int length = pageSize;    //姣忛〉璁板綍鏁�
+        final int currentPage = PageBean.countCurrentPage(page);
+        @SuppressWarnings("unchecked")
+		List<Courseoutline> list = courseoutlinedao.queryForPage(hql,offset, length);        //"涓�〉"鐨勮褰�
+        
+        //鎶婂垎椤典俊鎭繚瀛樺埌Bean涓�
+        PageBean pageBean = new PageBean();
+        pageBean.setPageSize(pageSize);    
+        pageBean.setCurrentPage(currentPage);
+        pageBean.setAllRow(allRow);
+        pageBean.setTotalPage(totalPage);
+        pageBean.setList(list);
+        pageBean.init();
+        return pageBean;
+	}
+
+	@Override
+	public PageBean queryForPageTeaching(int pageSize, int page,
+			int status, String term, String dept) {
+		final String hql = "from shiep.bean.Teachingprogress where did='"+dept+"' and status='"+status+"' and term='"+term+"'";        //鏌ヨ璇彞
+        int allRow = courseoutlinedao.getAllRowCount(hql);    //鎬昏褰曟暟
+        int totalPage = PageBean.countTotalPage(pageSize, allRow);    //鎬婚〉鏁�
+        final int offset = PageBean.countOffset(pageSize, page);    //褰撳墠椤靛紑濮嬭褰�
+        final int length = pageSize;    //姣忛〉璁板綍鏁�
+        final int currentPage = PageBean.countCurrentPage(page);
+        @SuppressWarnings("unchecked")
+		List<Teachingprogress> list = teachingprogressdao.queryForPage(hql,offset, length);        //"涓�〉"鐨勮褰�
+        
+        //鎶婂垎椤典俊鎭繚瀛樺埌Bean涓�
+        PageBean pageBean = new PageBean();
+        pageBean.setPageSize(pageSize);    
+        pageBean.setCurrentPage(currentPage);
+        pageBean.setAllRow(allRow);
+        pageBean.setTotalPage(totalPage);
+        pageBean.setList(list);
+        pageBean.init();
+        return pageBean;
+	}
+
+	@Override
+	public PageBean queryForPageTest(int pageSize, int page, int status,
+			String term, String dept) {
+		final String hql = "from shiep.bean.Testprogress where did='"+dept+"' and status='"+status+"' and term='"+term+"'";        //鏌ヨ璇彞
+        int allRow = testprogressdao.getAllRowCount(hql);    //鎬昏褰曟暟
+        int totalPage = PageBean.countTotalPage(pageSize, allRow);    //鎬婚〉鏁�
+        final int offset = PageBean.countOffset(pageSize, page);    //褰撳墠椤靛紑濮嬭褰�
+        final int length = pageSize;    //姣忛〉璁板綍鏁�
+        final int currentPage = PageBean.countCurrentPage(page);
+        @SuppressWarnings("unchecked")
+		List<Testprogress> list = testprogressdao.queryForPage(hql,offset, length);        //"涓�〉"鐨勮褰�
+        
+        //鎶婂垎椤典俊鎭繚瀛樺埌Bean涓�
+        PageBean pageBean = new PageBean();
+        pageBean.setPageSize(pageSize);    
+        pageBean.setCurrentPage(currentPage);
+        pageBean.setAllRow(allRow);
+        pageBean.setTotalPage(totalPage);
+        pageBean.setList(list);
+        pageBean.init();
+        return pageBean;
+	}
+
 
 	
 

@@ -10,4 +10,5 @@ public interface TeachingprogressDao {
 	public void checked(Teachingprogress  teachingprogress);
 	public List queryForPage(final String hql,final int offset,final int length);
 	public int getAllRowCount(String hql);
+	public List<Teachingprogress> findall();
 }

@@ -72,6 +72,11 @@ public class CourseDaoImpl extends BaseDao implements CourseDao {
 	
 		return getHibernateTemplate().find(hql).size();
 	}
+
+	@Override
+	public List<Course> showone(String cid) {
+		return (List<Course>)getHibernateTemplate().find("from shiep.bean.Course where id='"+cid+"'");
+	}
 	
 
 }
