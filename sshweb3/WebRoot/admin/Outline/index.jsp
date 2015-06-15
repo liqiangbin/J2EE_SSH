@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+       <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,91 +15,52 @@
     <script type="text/javascript" src="../Js/ckform.js"></script>
     <script type="text/javascript" src="../Js/common.js"></script>
 
- 
-
-    <style type="text/css">
-        body {
-            padding-bottom: 40px;
-        }
-        .sidebar-nav {
-            padding: 9px 0;
-        }
-
-        @media (max-width: 980px) {
-            /* Enable use of floated navbar text */
-            .navbar-text.pull-right {
-                float: none;
-                padding-left: 5px;
-                padding-right: 5px;
-            }
-        }
-
-
-    </style>
 </head>
 <body>
-<form class="form-inline definewidth m20" action="" method="post">    
-    学期：
-    <select>
-    	<option></option>
-    </select>
-    
+<!-- <form class="form-inline definewidth m20" action="" method="post">    
+   
     <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp; 
     <button type="button" class="btn btn-success" id="addnew">新增用户</button>
-</form>
+</form> -->
 <table class="table table-bordered table-hover definewidth m10">
+<caption align="absmiddle"><h2>教学大纲信息</h2></caption>
     <thead>
     <tr>
-        <th>课程号</th>
-        <th>课程名</th>
-        <th>专业名</th>
-        <th>状态</th>
-        <th>审核信息</th>
-        <th align="center">操作</th>
+        <th>课程大纲号</th>
+        <th>大纲名称</th>
+        <th>学期</th>
+        <th>教师</th>
+        <th>审核状态</th>
+        <th width="20%">审核信息</th>
+        <th>操作</th>
     </tr>
     </thead>
-	     <tr>
-            <td>2</td>
-            <td>admin</td>
-            <td>管理员</td>
-            <td></td>
-            <td></td>
-            <td>
-                <a href="#">编辑</a> 
-               
-                <a href="#">下载</a> 
-                <a href="#">查看实验进度表</a> 
-            </td>
-        </tr>	
+	    <s:iterator value="#rquest.outlinelist" id="outline">
+    
+   <tr>
+   	<td><s:property value="#outline.id" /></td>
+   		<td><s:property value="#outline.name" /></td>
+   			<td><s:property value="#outline.term" /></td>
+   			<td><s:property value="#outline.tname" /></td>
+   			
+   <td>
+  
+      <s:if test='#outline.status ==1'>
+        
+        通过审核
+ </s:if> 
+     <s:if test='#outline.status ==0'>
+       未通过审核
+ </s:if> 
+   		</td> 
+   					<td><s:property value="message" /></td>
+   					<td><button type="button" class="btn btn-success"><a href="">预览</a></button>&nbsp;&nbsp;
+   					<button type="button" class="btn btn-success"><a href="">下载</a></button>
+   					</td>
+   </tr>
+   </s:iterator>
+   
+  
 </table>
 </body>
 </html>
-<script>
-    $(function () {
-
-		$('#addnew').click(function(){
-
-				window.location.href="add.html";
-		 });
-
-
-    });
-
-	function del(id)
-	{
-		
-		
-		if(confirm("确定要删除吗？"))
-		{
-		
-			var url = "index.html";
-			
-			window.location.href=url;		
-		
-		}
-	
-	
-	
-	
-	}
-</script>

@@ -46,14 +46,11 @@
 <input type="hidden" name="teachingprogress.did" value="<%=list.get(i).getDid()%>">
 <input type="hidden" name="teachingprogress.address" value="<%=list.get(i).getAddress()%>">
 <input type="hidden" name="teachingprogress.term" value="<%=list.get(i).getTerm()%>">
-<input type="hidden" name="teachingprogress.status" value="<%="1"%>">
+<input type="hidden" name="teachingprogress.status" value="<%=1%>">
 <input type="hidden" name="teachingprogress.message" value="<%=list.get(i).getMessage()%>">
     	<td align="center"><button type="submit" class="btn btn-success">通过审核</button>
     		</form>
-    		
-    		
-    		
-    		          	<button class="btn btn-warning btn-lg" data-toggle="modal" 
+<button class="btn btn-warning btn-lg" data-toggle="modal" 
    data-target="#<%=i%>">
    审核意见
 </button>

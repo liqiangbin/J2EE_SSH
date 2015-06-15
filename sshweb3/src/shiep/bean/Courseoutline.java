@@ -9,6 +9,7 @@ public class Courseoutline implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
+	private String name;
 	private String cid;
 	private String tid;
 	private String tname;
@@ -25,8 +26,10 @@ public class Courseoutline implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Courseoutline(String cid, String tid, String tname, String did,
-			String address, String term, Integer status, String message) {
+	public Courseoutline(String name, String cid, String tid, String tname,
+			String did, String address, String term, Integer status,
+			String message) {
+		this.name = name;
 		this.cid = cid;
 		this.tid = tid;
 		this.tname = tname;
@@ -45,6 +48,14 @@ public class Courseoutline implements java.io.Serializable {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getCid() {

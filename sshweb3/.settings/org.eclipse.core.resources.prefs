@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//WebRoot/DeptManager/index.jsp=UTF-8
+encoding//src/shiep/serviceImpl/AllmessageServiceImpl.java=UTF-8
 encoding//src/shiep/serviceImpl/CourseServiceImpl.java=UTF-8
 encoding//src/shiep/serviceImpl/CourseopenServiceImpl.java=UTF-8
 encoding//src/shiep/serviceImpl/TeacherServiceImpl.java=UTF-8

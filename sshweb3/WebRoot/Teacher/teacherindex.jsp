@@ -6,9 +6,9 @@
 <head>
     <title>后台管理系统</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/bui-min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/main-min.css" rel="stylesheet" type="text/css" />
+    <link href="Teacher/assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+    <link href="Teacher/assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+    <link href="Teacher/assets/css/main-min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
@@ -27,30 +27,28 @@
         <ul id="J_Nav"  class="nav-list ks-clear">
             <li class="nav-item dl-selected"><div class="nav-item-inner nav-home">系统管理</div></li>		
             <li class="nav-item dl-selected"><div class="nav-item-inner nav-order">课程管理</div></li>
-  
-
         </ul>
     </div>
     <ul id="J_NavContent" class="dl-tab-conten">
 
     </ul>
 </div>
-<script type="text/javascript" src="assets/js/jquery-1.8.1.min.js"></script>
-<script type="text/javascript" src="assets/js/bui-min.js"></script>
-<script type="text/javascript" src="assets/js/common/main-min.js"></script>
-<script type="text/javascript" src="assets/js/config-min.js"></script>
+<script type="text/javascript" src="Teacher/assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="Teacher/assets/js/bui-min.js"></script>
+<script type="text/javascript" src="Teacher/assets/js/common/main-min.js"></script>
+<script type="text/javascript" src="Teacher/assets/js/config-min.js"></script>
 <script>
     BUI.use('common/main',function(){
         var config = [{id:'1',menu:[{text:'系统管理',items:[
-        {id:'12',text:'个人信息管理',href:'myself/index.jsp'},
-        {id:'2',text:'学院公告',href:'Notice/collegeNotice.jsp'},
-       {id:'5',text:'本系公告',href:'Notice/deptnotice.jsp'}]}]},
+        {id:'12',text:'个人信息管理',href:'Teacher/myself/index.jsp'},
+        {id:'2',text:'学院公告',href:'Teacher/Notice/collegeNotice.jsp'},
+       {id:'5',text:'本系公告',href:'Teacher/Notice/deptnotice.jsp'}]}]},
+       
         {id:'7',homePage: '9',menu:[{text:'课程信息维护',items:[
-        {id:'9',text:'填写教学大纲',href:'Course/EditOutline.jsp'},
-        {id:'3',text:'查阅教学大纲',href:'Course/LookOutline.jsp'},
-         {id:'4',text:'教学进度表管理',href:'Course/TeachingProgress.jsp'},
-          {id:'6',text:'实验进度表管理',href:'Course/TestProgress.jsp'}
-           
+        {id:'9',text:'填写教学大纲',href:'Teacher/Course/EditOutline.jsp'},
+        {id:'3',text:'查阅教学大纲',href:'Teacher/Course/LookOutline.jsp'},
+         {id:'4',text:'教学进度表管理',href:'Teacher/Course/TeachingProgress.jsp'},
+          {id:'6',text:'实验进度表管理',href:'Teacher/Course/TestProgress.jsp'},
         ]}]}];
         new PageUtil.MainPage({
             modulesConfig : config

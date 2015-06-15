@@ -48,7 +48,8 @@ body {
 				<td>
 				<select name="course.name">
 			<s:iterator value="#request.coulist" id="course">
-						<option><s:property value="#course.name" /> </option>
+				<s:property value="#course.name" />
+				<option><s:property value="#course.name" /> </option>
 			</s:iterator>
 				</select>
 				</td>

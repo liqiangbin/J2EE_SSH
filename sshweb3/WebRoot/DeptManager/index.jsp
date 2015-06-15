@@ -13,6 +13,8 @@
 </head>
 <body>
 <% List<Departmenthead> person=(List<Departmenthead>)session.getAttribute("person");
+String s="0";
+session.setAttribute("messagetype",s);
  %>
 <div class="header">
 

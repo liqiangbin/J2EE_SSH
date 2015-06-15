@@ -40,9 +40,12 @@
 		     <result name="success">/DeptManager/Course/MatchOutline.jsp</result>
 		     <result name="sort">/DeptManager/Course/MatchOutline.jsp</result>
 		</action>
+		
 			<action name="courseoutlineAction_*" class="courseoutlineAction" method="{1}">
 		     <result name="nostatus">/DeptManager/Course/CourseOutline.jsp</result>
 		     <result name="checked">/DeptManager/Course/CourseOutline.jsp</result>
+		     <result name="outline">/Admin/Outline/index.jsp</result>
+		     
 		     <result name="view">Default.jsp</result>
 		</action>
 		
@@ -81,9 +84,13 @@
 			<result name="disp" type="chain">copenAction_showCourseOpenInfo</result>
 		
 		</action>
+		<action name="allmessageAction_*" class="allmessageAction" method="{1}">
+			<result name="outlinepagelist">MessageCount.jsp</result>
+			<result name="teachingpagelist">MessageCount.jsp</result>
+			<result name="testpagelist">MessageCount.jsp</result>
+		</action>
 		
-		
-		
+
 		<action name="upload" class="shiep.action.FileUploadAction" method="execute">
             <!-- 动态设置savePath的属性值 -->
             <param name="savePath">/images</param>

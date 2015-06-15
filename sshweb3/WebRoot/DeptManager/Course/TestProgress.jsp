@@ -46,7 +46,7 @@
 <input type="hidden" name="testprogress.did" value="<%=list.get(i).getDid()%>">
 <input type="hidden" name="testprogress.address" value="<%=list.get(i).getAddress()%>">
 <input type="hidden" name="testprogress.term" value="<%=list.get(i).getTerm()%>">
-<input type="hidden" name="testprogress.status" value="<%="1"%>">
+<input type="hidden" name="testprogress.status" value="<%=1%>">
 <input type="hidden" name="testprogress.message" value="<%=list.get(i).getMessage()%>">
     	<td align="center"><button type="submit" class="btn btn-success">通过审核</button>
     		</form>

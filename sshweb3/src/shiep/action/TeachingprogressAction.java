@@ -37,6 +37,8 @@ public class TeachingprogressAction  extends ActionSupport{
 		 return "nostatus";
 	}
 	public String checked() throws Exception{
+//		System.out.println(teachingprogress.getStatus());
+//		System.out.println(teachingprogress.getMessage());
 		teachingprogressdao.checked(teachingprogress);
 		return "checked";
 	}

@@ -43,7 +43,7 @@ public class CourseoutlineAction  extends ActionSupport{
 		 return "nostatus";
 	}
 	public String checked() throws Exception{
-//		System.out.println("*******");
+		System.out.println("*******");
 //		System.out.println(courseoutline.getTerm());
 //		System.out.println(courseoutline.getId());
 //		System.out.println(courseoutline.getStatus());
@@ -59,6 +59,13 @@ public class CourseoutlineAction  extends ActionSupport{
 		 ActionContext context=ActionContext.getContext();
 		 context.getSession().put("outlineview",address );
 		return "view";
+	}
+	
+	public String showAllOutline() throws Exception{
+		List<Courseoutline> outline=courseoutlinedao.showAllOutline();
+		Map request=(Map)ActionContext.getContext().get("request");
+		request.put("outlinelist", outline);
+		return "outline";
 	}
 	
 }

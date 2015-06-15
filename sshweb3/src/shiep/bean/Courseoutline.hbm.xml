@@ -10,6 +10,11 @@
             <column name="id" />
             <generator class="native"></generator>
         </id>
+        <property name="name" type="java.lang.String">
+            <column name="name" length="30">
+                <comment>鍚嶇О</comment>
+            </column>
+        </property>
         <property name="cid" type="java.lang.String">
             <column name="cid" length="30">
                 <comment>璇剧▼鍙�</comment>
