@@ -57,9 +57,12 @@
 								</td>
 								<td><s:property value="textbook" /></td>
 
-								<td>
+								<td align="right">
+							<a href="couAction_delete.action?course.id=<s:property value="id" />" class="btn btn-primary btn-lg" role="button">
+                                                        删除
+                                  </a>
+     
 								
-								<button class="btn btn-default"> <a href="couAction_delete.action?course.id=<s:property value="id" />">删除</a></button>
 								
 								<button class="btn btn-default"> <a href="edit.jsp">编辑</a></button>
 								</td>

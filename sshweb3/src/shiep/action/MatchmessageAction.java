@@ -52,15 +52,11 @@ public class MatchmessageAction extends ActionSupport{
 		this.teacherDao = teacherDao;
 	}
 	public String findbydept() throws Exception{
-		//System.out.println(matchmessage.getDid());
 		 ActionContext context=ActionContext.getContext();
 		List<Matchmessage> list= matchmessagedao.findByDeptstatus(matchmessage.getDid());
 		List<Teacher> tlist= teacherDao.showTeacherBydid(matchmessage.getDid());
-		// Map request=(Map) ActionContext.getContext().get("request");
 		context.getSession().put("outline", list);
 		context.getSession().put("teacher", tlist);
-     //  request.put("outline", list); 
-     //  request.put("teacher", tlist); 
 		 return "success";
 	}
 	public String sort() throws Exception{

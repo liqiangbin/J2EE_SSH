@@ -22,6 +22,8 @@
 	<mapping resource="shiep/bean/Courseopen.hbm.xml" />
 	<mapping resource="shiep/bean/Teachingprogress.hbm.xml" />
 	<mapping resource="shiep/bean/Testprogress.hbm.xml" />
+	<mapping resource="shiep/bean/Sortprogress.hbm.xml" />
+	<mapping resource="shiep/bean/Term.hbm.xml" />
 	
 </session-factory>
 </hibernate-configuration>

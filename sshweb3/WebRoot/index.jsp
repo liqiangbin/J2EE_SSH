@@ -43,11 +43,11 @@
     BUI.use('admin/common/main',function(){
         var config = [{id:'1',menu:[{text:'课程信息',items:[
         {id:'2',text:'课程信息管理',href:'couAction_showPage.action?page=1'},
-        {id:'3',text:'开课信息管理',href:'copenAction_showPage.action?page=1'},
-        {id:'4',text:'课程大纲管理',href:'courseoutlineAction_showAllOutline'},
-        {id:'5',text:'分配课程大纲',href:'admin/Outline/distributeOutline.jsp'},
-        {id:'6',text:'教学进度管理',href:'admin/Progress/index.jsp'},
-        {id:'7',text:'实验进度管理',href:'admin/Progress/index.jsp'},
+        {id:'3',text:'浏览开课信息',href:'copenAction_showPage.action?page=1'},
+         {id:'5',text:'分配课程大纲',href:'admin/Outline/distributeOutline.jsp'},
+        {id:'4',text:'课程大纲信息',href:'courseoutlineAction_showAllOutline'},
+        {id:'6',text:'教学进度表信息',href:'admin/Progress/index.jsp'},
+        {id:'7',text:'实验进度表信息',href:'admin/Progress/index.jsp'},
         
         ]}]},
         

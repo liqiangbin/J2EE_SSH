@@ -19,8 +19,9 @@
 	</head>
 
 	<body>
-<% String id="2500010"; %>
-		<form class="form-inline definewidth m20" action="announceAction_searchdept?departmenthead.id=<%=id %>" method="post">
+<%List<Departmenthead> person=(List<Departmenthead>)session.getAttribute("person");
+String id=person.get(0).getDid();%>
+		<form class="form-inline definewidth m20" action="announceAction_searchdept?departmenthead.did=<%=id %>" method="post">
 			公告名称：
 			<input type="text" name="announce.title"  class="abc input-default" placeholder="请输入关键字" >&nbsp;&nbsp;
 			<button type="submit" class="btn btn-primary">查&nbsp;&nbsp;询</button>
@@ -49,7 +50,11 @@
 				</tr>
 	</s:iterator>
 		</table>
-		<div>
+		
+		
+		
+		
+			
 			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<button class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
 				发布新公告
@@ -75,8 +80,6 @@
 									Date time1=new Date();
 		                           SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		                             String time=sdf.format(time1);
-		                            List<Departmenthead> person=(List<Departmenthead>)session.getAttribute("person");
- 
 		                             %>
 										<input type="hidden" name="announce.time" value="<%=time%>"/>
 										</td>
@@ -112,7 +115,7 @@
 					<!-- /.modal -->
 				</div>
 			</form>
-		</div>
+	
 	</body>
 
 </html>

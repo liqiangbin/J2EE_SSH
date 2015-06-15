@@ -72,32 +72,6 @@
             </td>
         </tr>	
 </table>
-
-
 </body>
 </html>
 <script>
-function distribute(){
-		window.location.href="<%=request.getContextPath()%>/admin/Outline/addOutineToDept.jsp";
-
-}
-   
-
-	function del(id)
-	{
-		
-		
-		if(confirm("确定要删除吗？"))
-		{
-		
-			var url = "index.html";
-			
-			window.location.href=url;		
-		
-		}
-	
-	
-	
-	
-	}
-</script>

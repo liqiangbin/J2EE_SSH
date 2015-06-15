@@ -62,6 +62,7 @@ public class CourseoutlineAction  extends ActionSupport{
 	}
 	
 	public String showAllOutline() throws Exception{
+	
 		List<Courseoutline> outline=courseoutlinedao.showAllOutline();
 		Map request=(Map)ActionContext.getContext().get("request");
 		request.put("outlinelist", outline);

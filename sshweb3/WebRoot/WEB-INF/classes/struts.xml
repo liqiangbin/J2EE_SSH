@@ -35,16 +35,24 @@
 		     <result name="deptsearch" >/DeptManager/Notice/deptnotice.jsp</result>
 		     <result name="deleted" >/DeptManager/Notice/deptnotice.jsp</result>
 		     <result name="add">/DeptManager/Notice/deptnotice.jsp</result>
+		      <result name="teacherfind">/Teacher/Notice/deptnotice.jsp</result>
+		      <result name="teachersearch">/Teacher/Notice/deptnotice.jsp</result>
 		</action>
 			<action name="matchmessageAction_*" class="matchmessageAction" method="{1}">
 		     <result name="success">/DeptManager/Course/MatchOutline.jsp</result>
 		     <result name="sort">/DeptManager/Course/MatchOutline.jsp</result>
 		</action>
 		
+		<action name="sortprogressAction_*" class="sortprogressAction" method="{1}">
+		     <result name="success">/DeptManager/Course/SortProgress.jsp</result>
+		     <result name="sort">/DeptManager/Course/SortProgress.jsp</result>
+		     <result name="dd">/DeptManager/Course/SortProgress.jsp</result>
+		</action>
+		
 			<action name="courseoutlineAction_*" class="courseoutlineAction" method="{1}">
 		     <result name="nostatus">/DeptManager/Course/CourseOutline.jsp</result>
 		     <result name="checked">/DeptManager/Course/CourseOutline.jsp</result>
-		     <result name="outline">/Admin/Outline/index.jsp</result>
+		     <result name="outline">/admin/Outline/index.jsp</result>
 		     
 		     <result name="view">Default.jsp</result>
 		</action>

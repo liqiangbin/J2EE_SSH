@@ -10,6 +10,8 @@ import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.opensymphony.xwork2.ActionContext;
+
 import shiep.bean.Announce;
 import shiep.bean.Teacher;
 import shiep.dao.BaseDao;
@@ -30,6 +32,8 @@ public class TeacherDaoImpl extends BaseDao implements TeacherDao  {
 		List<Teacher> teacher=this.getHibernateTemplate().find("from shiep.bean.Teacher where id=? and password=?", id,password);
 		boolean flag=false;
 		if(teacher.size()>0){
+			 ActionContext context=ActionContext.getContext();
+			 context.getSession().put("teacher", teacher);
 			flag=true;
 		}
 		return flag;

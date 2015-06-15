@@ -11,7 +11,7 @@
     <link href="Teacher/assets/css/main-min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
+<% List<Teacher> teacher=(List<Teacher>)session.getAttribute("teacher"); %>
 <div class="header">
 
     <div class="dl-title">
@@ -41,9 +41,8 @@
     BUI.use('common/main',function(){
         var config = [{id:'1',menu:[{text:'系统管理',items:[
         {id:'12',text:'个人信息管理',href:'Teacher/myself/index.jsp'},
-        {id:'2',text:'学院公告',href:'Teacher/Notice/collegeNotice.jsp'},
-       {id:'5',text:'本系公告',href:'Teacher/Notice/deptnotice.jsp'}]}]},
-       
+        {id:'2',text:'学院公告',href:'announceAction_findByStatus'},
+       {id:'5',text:'本系公告',href:'announceAction_teacherfindbydept?dept=<%=teacher.get(0).getDid()%>'}]}]},
         {id:'7',homePage: '9',menu:[{text:'课程信息维护',items:[
         {id:'9',text:'填写教学大纲',href:'Teacher/Course/EditOutline.jsp'},
         {id:'3',text:'查阅教学大纲',href:'Teacher/Course/LookOutline.jsp'},

@@ -20,6 +20,7 @@ public class AnnounceDaoImpl  extends BaseDao implements AnnounceDao{
 			throw e;
 		}
 	}
+	
 	@Override
 	public List<Announce> searchBytable(Announce announce) {
 		try{

@@ -6,14 +6,14 @@
 <head>
     <title></title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../Css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="../Css/bootstrap-responsive.css" />
-    <link rel="stylesheet" type="text/css" href="../Css/style.css" />
-    <script type="text/javascript" src="../Js/jquery.js"></script>
-    <script type="text/javascript" src="../Js/jquery.sorted.js"></script>
-    <script type="text/javascript" src="../Js/bootstrap.js"></script>
-    <script type="text/javascript" src="../Js/ckform.js"></script>
-    <script type="text/javascript" src="../Js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="admin/Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="admin/Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="admin/Css/style.css" />
+    <script type="text/javascript" src="admin/Js/jquery.js"></script>
+    <script type="text/javascript" src="admin/Js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="admin/Js/bootstrap.js"></script>
+    <script type="text/javascript" src="admin/Js/ckform.js"></script>
+    <script type="text/javascript" src="admin/Js/common.js"></script>
 
 </head>
 <body>
@@ -35,7 +35,7 @@
         <th>操作</th>
     </tr>
     </thead>
-	    <s:iterator value="#rquest.outlinelist" id="outline">
+	    <s:iterator value="#request.outlinelist" id="outline">
     
    <tr>
    	<td><s:property value="#outline.id" /></td>

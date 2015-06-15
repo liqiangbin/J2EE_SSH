@@ -91,6 +91,10 @@ public class TeacherAction extends ActionSupport{
 	}
 	
 	public String updatepwd() throws Exception{
+		
+		
+		System.out.println(teacher.getPassword());
+		
 		teacherDao.updatePwd(teacher);
 		return "disp";
 	}

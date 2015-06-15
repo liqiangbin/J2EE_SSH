@@ -18,10 +18,18 @@ import com.opensymphony.xwork2.ActionSupport;
 public class AnnounceAction  extends ActionSupport{
 	private Announce announce;
 	private Departmenthead departmenthead;
+	private String dept;
 	@Resource
 	private AnnounceDao announcedao;
 	@Resource
 	private DepartmentheadDao deptheaddao;
+	
+	public String getDept() {
+		return dept;
+	}
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
 	public Announce getAnnounce() {
 		return announce;
 	}
@@ -53,8 +61,10 @@ public class AnnounceAction  extends ActionSupport{
 		 return "search";
 	}
 	public String findBydept() throws Exception{
+		//System.out.println(departmenthead.getDid());
 		 List<Departmenthead> list1=(List<Departmenthead>)deptheaddao.findDepartmentheadById(departmenthead.getId());
 		List<Announce> list=(List<Announce>)announcedao.findBydept(list1.get(0).getDid());
+		//System.out.println(list1.get(0).getDid());
 		 Map request=(Map) ActionContext.getContext().get("request");
         request.put("list", list); 
 		 return "deptAnnounce";
@@ -62,6 +72,7 @@ public class AnnounceAction  extends ActionSupport{
 	public String searchdept() throws Exception{
 		 List<Departmenthead> list1=(List<Departmenthead>)deptheaddao.findDepartmentheadById(departmenthead.getId());
 		 List<Announce> list=(List<Announce>)announcedao.searchBydept(list1.get(0).getDid(),announce);
+		 System.out.println(list.size());
 		 Map request=(Map) ActionContext.getContext().get("request");
         request.put("list", list); 
 		 return "deptsearch";
@@ -73,5 +84,17 @@ public class AnnounceAction  extends ActionSupport{
 	public String add() throws Exception{
 		announcedao.add(announce);
 		 return "add";
+	}
+	public  String teacherfindbydept() throws Exception{
+		 List<Announce> list=(List<Announce>)announcedao.findBydept(dept);
+		 Map request=(Map) ActionContext.getContext().get("request");
+	        request.put("list", list); 
+		 return "teacherfind";
+	}
+	public  String teachersearchbydept() throws Exception{
+		 List<Announce> list=(List<Announce>)announcedao.searchBydept(dept, announce);
+		 Map request=(Map) ActionContext.getContext().get("request");
+	        request.put("list", list); 
+		 return "teachersearch";
 	}
 }

@@ -29,7 +29,10 @@
 </form>
 
     <div align="left" style="float: right;">
-  <button class="btn btn-default"> <a href="<%=request.getContextPath()%>/admin/teacher/add.jsp"> 添加教师</a></button>
+    <a href="<%=request.getContextPath()%>/admin/teacher/add.jsp" class="btn btn-primary btn-lg" role="button">
+    添加教师
+   </a>
+ 
 &nbsp;&nbsp;&nbsp;&nbsp;
 <button type="button" class="btn btn-success" id="addnew">数据导入</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
 </div>
@@ -65,7 +68,8 @@
 				<td><s:property value="email" />
 				</td>
 			
-				<td width="10%" align="center"><form action="teaAction_updatepwd" method="post">
+				<td width="10%" align="center">
+				<form action="teaAction_updatepwd" method="post">
 				<input type="hidden" name="teacher.id" value="<s:property value="id" />">
 				<input type="hidden" name="teacher.name" value="<s:property value="name" />">
 				<input type="hidden" name="teacher.sex" value="<s:property value="sex" />">
@@ -76,10 +80,11 @@
 				<button class="btn btn-danger"  type="submit">密码重置</button>
 				</form></td>
 		
-				<td width="15%">							
-				<button class="btn btn-default" >
-					<a href="teaAction_delete?teacher.id=<s:property value="id" />">删除</a>
-				</button>
+				<td width="15%">
+					 <a href="teaAction_delete?teacher.id=<s:property value="id" />" class="btn btn-default btn-lg" role="button">
+   删除
+   </a>						
+				
 
 
 
