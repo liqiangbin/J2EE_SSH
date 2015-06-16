@@ -72,6 +72,13 @@
 		<servlet-name>adminseal</servlet-name>
 		<servlet-class>com.zhuozhengsoft.pageoffice.poserver.AdminSeal</servlet-class>
 	</servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ImportServlet</servlet-name>
+    <servlet-class>shiep.servlet.ImportServlet</servlet-class>
+  </servlet>
+
 	<servlet-mapping>
 		<servlet-name>adminseal</servlet-name>
 		<url-pattern>/adminseal.do</url-pattern>
@@ -84,6 +91,7 @@
 		<servlet-name>adminseal</servlet-name>
 		<url-pattern>/sealimage.do</url-pattern>
 	</servlet-mapping>
+ 
 	<mime-mapping>
 		<extension>mht</extension>
 		<mime-type>message/rfc822</mime-type>

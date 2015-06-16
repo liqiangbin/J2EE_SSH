@@ -34,7 +34,11 @@
 
 课程</button>
 &nbsp;&nbsp;&nbsp;&nbsp;
-<button type="button" class="btn btn-success" id="addnew">批量导入</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+ <a href="<%=request.getContextPath() %>/importData.jsp" class="btn btn-success btn-lg disabled" role="button">
+   批量导入
+   </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
 </div>
 
 				<div style="width: 100%">

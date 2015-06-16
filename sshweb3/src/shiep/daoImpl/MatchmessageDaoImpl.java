@@ -49,4 +49,13 @@ public class MatchmessageDaoImpl extends BaseDao implements MatchmessageDao {
 			}
 		
 	}
+	@Override
+	public List<Matchmessage> findBytstatus(String dept) {
+		try{
+			String queryStr="from shiep.bean.Matchmessage  where tstatus='0' and did='"+dept+"' ";
+			return (List<Matchmessage>)getHibernateTemplate().find(queryStr);
+		}catch(RuntimeException e){
+			throw e;
+		}
+	}
 }

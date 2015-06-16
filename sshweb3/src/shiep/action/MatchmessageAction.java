@@ -95,6 +95,14 @@ public class MatchmessageAction extends ActionSupport{
 		context.getSession().put("teacher", tlist);
 		 return "success";
 	}
+	public String findbydept1() throws Exception{
+		 ActionContext context=ActionContext.getContext();
+		List<Matchmessage> list= matchmessagedao.findBytstatus(matchmessage.getDid());
+	//	List<Teacher> tlist= teacherDao.showTeacherBydid(matchmessage.getDid());
+		context.getSession().put("teacheroutline", list);
+		//context.getSession().put("teacher", tlist);
+		 return "success1";
+	}
 	public String sort() throws Exception{
 		matchmessagedao.sortTeacher(matchmessage);
 		 return "success";

@@ -16,7 +16,7 @@
 </head>
 <body>
    <table class="table table-bordered table-hover definewidth m10">
-	<caption align="absmiddle"><h2>待填写课程大纲信息</h2></caption>
+	<caption align="absmiddle"><h2>待填写教学进度表信息</h2></caption>
     <thead>
     <tr>
         <th>课程号</th>
@@ -25,17 +25,29 @@
         <th>操作</th>
     </tr>
     </thead>
-     <% List<Matchmessage> list =(List<Matchmessage>)session.getAttribute("teacheroutline");
-    for(int i=0;i<list.size();i++){
-     %>
-	     <tr>
-			<td><%=list.get(i).getCid() %></td>	
-				<td><%=list.get(i).getCname() %></td>	
-					<td>未填写</td>	
-            <td><a href="#">填写教学大纲</a>
+     <% List<Sortprogress> list=(List<Sortprogress>)session.getAttribute("nofillteaching"); %>
+	     <%for(int i=0;i<list.size();i++){ %>
+    <tr>
+    	<td><%=list.get(i).getCid() %></td>
+    	<td width="15%" align="center">
+				<%List<Course> course =(List<Course>)session.getAttribute("courselist");
+				String name=null;
+				String id=list.get(i).getCid();
+				for(int m=0;m<course.size();m++){
+				if(id.equals(course.get(m).getId())){
+				
+				name=course.get(m).getName();
+				break;
+				}}
+				%>
+				<%=name %>
+				</td>
+    	<td>未填写</td>
+    	<td>
+            	<a href="#">填写教学进度表</a>
             </td>
-        </tr>
-        <%} %>	
+        </tr>	
+        <%} %>
 </table>
 </body>
 </html>

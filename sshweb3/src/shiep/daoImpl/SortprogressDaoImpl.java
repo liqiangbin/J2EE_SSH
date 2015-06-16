@@ -38,4 +38,22 @@ public class SortprogressDaoImpl  extends BaseDao implements SortprogressDao{
 		}
 		
 	}
+@Override
+public List<Sortprogress> findteachingByTeacher(String tid) {
+	try{
+		String queryStr="from shiep.bean.Sortprogress  where type='教学进度表' and status=0 and tid='"+tid+"' ";
+		return (List<Sortprogress>)getHibernateTemplate().find(queryStr);
+	}catch(RuntimeException e){
+		throw e;
+	}
+}
+@Override
+public List<Sortprogress> findtestByTeacher(String tid) {
+	try{
+		String queryStr="from shiep.bean.Sortprogress  where type='实验进度表' and status=0 and tid='"+tid+"' ";
+		return (List<Sortprogress>)getHibernateTemplate().find(queryStr);
+	}catch(RuntimeException e){
+		throw e;
+	}
+}
 }

@@ -40,6 +40,7 @@
 		</action>
 			<action name="matchmessageAction_*" class="matchmessageAction" method="{1}">
 		     <result name="success">/DeptManager/Course/MatchOutline.jsp</result>
+		      <result name="success1">/Teacher/Course/EditOutline.jsp</result>
 		     <result name="sort">/DeptManager/Course/MatchOutline.jsp</result>
 		     <result name="findall">/admin/Outline/distributeOutline.jsp</result>
 		     <result name="matchmessage" type="chain">matchmessageAction_findall</result>
@@ -47,8 +48,11 @@
 		
 		<action name="sortprogressAction_*" class="sortprogressAction" method="{1}">
 		     <result name="success">/DeptManager/Course/SortProgress.jsp</result>
+		       <result name="nofillteaching">/Teacher/Course/EditTeachingProgress.jsp</result>
+		       <result name="nofilltest">/Teacher/Course/EditTestProgress.jsp</result>
 		     <result name="sort">/DeptManager/Course/SortProgress.jsp</result>
 		     <result name="dd">/DeptManager/Course/SortProgress.jsp</result>
+
 		</action>
 		
 			<action name="courseoutlineAction_*" class="courseoutlineAction" method="{1}">
@@ -86,6 +90,7 @@
 		 <result name="index">admin/Course/course.jsp</result>
 		 <result name="input">admin/Course/course.jsp</result>
 		 <result name="pagelist">admin/Course/course.jsp</result>
+		 <result name="importdata">admin/Course/course.jsp</result>
 		
 		<result name="disp" type="chain">couAction_showAllCourse</result>
 		<result name="disp1" type="chain">couAction_showAllCourse</result>

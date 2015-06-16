@@ -47,4 +47,11 @@ public class TeachingprogressAction  extends ActionSupport{
 		 context.getSession().put("NoStatusTeaching", list);
 		 return "all";
 	}
+	public String findByTid() throws Exception{
+		
+		 ActionContext context=ActionContext.getContext();
+		 List<Teachingprogress> list=(List<Teachingprogress>)teachingprogressdao.findByTid(teachingprogress.getTid());
+		 context.getSession().put("NofillTeaching", list);
+		 return "NofillTeaching";
+	}
 }
