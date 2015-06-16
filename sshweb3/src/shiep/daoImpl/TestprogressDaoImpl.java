@@ -70,6 +70,26 @@ public class TestprogressDaoImpl extends BaseDao implements TestprogressDao {
 			throw e;
 		}
 	}
-	
 
+	@Override
+	public List<Testprogress> findByTeacher(String tid) {
+
+		try{
+			String queryStr="from shiep.bean.Testprogress  where tid='"+tid+"' ";
+			return (List<Testprogress>)getHibernateTemplate().find(queryStr);
+		}catch(RuntimeException e){
+			throw e;
+		}
+	}
+
+	@Override
+	public List<Testprogress> findByTerm(String tid, String term) {
+
+		try{
+			String queryStr="from shiep.bean.Testprogress  where tid='"+tid+"' and  term='"+term+"'";
+			return (List<Testprogress>)getHibernateTemplate().find(queryStr);
+		}catch(RuntimeException e){
+			throw e;
+		}
+	}
 }

@@ -78,4 +78,24 @@ public class TeachingprogressDaoImpl extends BaseDao implements Teachingprogress
 			throw e;
 		}
 	}
+
+	@Override
+	public List<Teachingprogress> findByTeacher(String tid) {
+		try{
+			String queryStr="from shiep.bean.Teachingprogress  where tid='"+tid+"'";
+			return (List<Teachingprogress>)getHibernateTemplate().find(queryStr);
+		}catch(RuntimeException e){
+			throw e;
+		}
+	}
+
+	@Override
+	public List<Teachingprogress> findByTerm(String tid, String term) {
+		try{
+			String queryStr="from shiep.bean.Teachingprogress  where term='"+term+"' and tid='"+tid+"'";
+			return (List<Teachingprogress>)getHibernateTemplate().find(queryStr);
+		}catch(RuntimeException e){
+			throw e;
+		}
+	}
 	}

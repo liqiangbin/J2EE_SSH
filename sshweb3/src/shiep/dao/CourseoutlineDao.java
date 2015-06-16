@@ -10,4 +10,6 @@ public interface CourseoutlineDao {
 	public List queryForPage(final String hql,final int offset,final int length);
 	public int getAllRowCount(String hql);
 	public List<Courseoutline> showAllOutline();
+	public List<Courseoutline> findByTeacher(String tid);
+	public List<Courseoutline> findByTerm(String tid,String term);
 }

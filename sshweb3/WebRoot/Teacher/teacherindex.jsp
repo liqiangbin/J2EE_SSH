@@ -47,9 +47,9 @@
         {id:'9',text:'填写教学大纲',href:'matchmessageAction_findbydept1?matchmessage.did=<%=teacher.get(0).getDid()%>'},
         {id:'10',text:'填写教学进度表',href:'sortprogressAction_findteachingByTeacher?sortprogress.tid=<%=teacher.get(0).getId()%>'},
         {id:'11',text:'填写实验进度表',href:'sortprogressAction_findtestByTeacher?sortprogress.tid=<%=teacher.get(0).getId()%>'},
-        {id:'3',text:'查阅教学大纲',href:'Teacher/Course/LookOutline.jsp'},
-         {id:'4',text:'教学进度表管理',href:'Teacher/Course/TeachingProgress.jsp'},
-          {id:'6',text:'实验进度表管理',href:'Teacher/Course/TestProgress.jsp'},
+        {id:'3',text:'查阅教学大纲',href:'courseoutlineAction_findByTeacher?courseoutline.tid=<%=teacher.get(0).getId()%>'},
+         {id:'4',text:'教学进度表管理',href:'teachingprogressAction_findByTeacher?teachingprogress.tid=<%=teacher.get(0).getId()%>'},
+          {id:'6',text:'实验进度表管理',href:'testprogressAction_findByTeacher?testprogress.tid=<%=teacher.get(0).getId()%>'},
         ]}]}];
         new PageUtil.MainPage({
             modulesConfig : config

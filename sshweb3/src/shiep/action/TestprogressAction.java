@@ -7,7 +7,9 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 
 import shiep.bean.Teachingprogress;
+import shiep.bean.Term;
 import shiep.bean.Testprogress;
+import shiep.dao.TermDao;
 import shiep.dao.TestprogressDao;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -17,8 +19,24 @@ import com.opensymphony.xwork2.ActionSupport;
 @Controller
 public class TestprogressAction  extends ActionSupport{
 	private  Testprogress  testprogress;
+	private  Term  term;
+	@Resource
+	private  TermDao termdao;
 	@Resource
 	private  TestprogressDao testprogressdao;
+	
+	public Term getTerm() {
+		return term;
+	}
+	public void setTerm(Term term) {
+		this.term = term;
+	}
+	public TermDao getTermdao() {
+		return termdao;
+	}
+	public void setTermdao(TermDao termdao) {
+		this.termdao = termdao;
+	}
 	public Testprogress getTestprogress() {
 		return testprogress;
 	}
@@ -49,5 +67,21 @@ public class TestprogressAction  extends ActionSupport{
 		 List<Testprogress> list=(List<Testprogress>)testprogressdao.findall();
 		 context.getSession().put("NoStatusTest", list);
 		 return "all";
+	}
+	public String findByTeacher() throws Exception{
+		 ActionContext context=ActionContext.getContext();
+		 List<Testprogress> list=(List<Testprogress>)testprogressdao.findByTeacher(testprogress.getTid());
+		 List<Term> term=(List<Term>)termdao.findAll();
+		 context.getSession().put("term", term);
+		 context.getSession().put("oneTestTeaching", list);
+		 return "onetestTeaching";
+	}
+	public String findByTerm() throws Exception{
+		 ActionContext context=ActionContext.getContext();
+		 List<Testprogress> list=(List<Testprogress>)testprogressdao.findByTerm(testprogress.getTid(), testprogress.getTerm());
+		 List<Term> term=(List<Term>)termdao.findAll();
+		 context.getSession().put("term", term);
+		 context.getSession().put("oneTestTeaching", list);
+		 return "onetestTeaching";
 	}
 }

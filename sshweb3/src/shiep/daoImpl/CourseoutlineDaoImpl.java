@@ -59,7 +59,24 @@ public class CourseoutlineDaoImpl extends BaseDao implements CourseoutlineDao{
 	}
 	
 	public List<Courseoutline> showAllOutline() {
-		// TODO Auto-generated method stub
 		return (List<Courseoutline>)getHibernateTemplate().find("from shiep.bean.Courseoutline");
+	}
+	@Override
+	public List<Courseoutline> findByTeacher(String tid) {
+		try{
+			String queryStr="from shiep.bean.Courseoutline  where tid='"+tid+"' ";
+			return (List<Courseoutline>)getHibernateTemplate().find(queryStr);
+		}catch(RuntimeException e){
+			throw e;
+		}
+	}
+	@Override
+	public List<Courseoutline> findByTerm(String tid, String term) {
+		try{
+			String queryStr="from shiep.bean.Courseoutline  where term='"+term+"' and tid='"+tid+"' ";
+			return (List<Courseoutline>)getHibernateTemplate().find(queryStr);
+		}catch(RuntimeException e){
+			throw e;
+		}
 	}
 }

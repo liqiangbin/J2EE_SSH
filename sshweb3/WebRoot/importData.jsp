@@ -6,9 +6,12 @@
 	PageOfficeCtrl poCtrl = new PageOfficeCtrl(request);
 	poCtrl.addCustomToolButton("导入文件", "importData()", 5);
 	poCtrl.addCustomToolButton("提交数据", "submitData()", 1);
+	
 	Workbook wb=new Workbook();
 	Sheet sheet = wb.openSheet("Sheet1");
+
 	poCtrl.setWriter(wb);
+	
 	poCtrl.setServerPage("poserver.do");
 	poCtrl.setSaveDataPage("savedata.jsp");
 	//若要导入的文件是只读的且有密码保护，则设置属性“setProtectPassword”，其值就是Excel文件中设置的密码

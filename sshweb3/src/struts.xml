@@ -59,6 +59,7 @@
 		     <result name="nostatus">/DeptManager/Course/CourseOutline.jsp</result>
 		     <result name="checked">/DeptManager/Course/CourseOutline.jsp</result>
 		     <result name="outline">/admin/Outline/index.jsp</result>
+		      <result name="TeacherOutline">/Teacher/Course/LookOutline.jsp</result>
 		     
 		     <result name="view">Default.jsp</result>
 		</action>
@@ -67,11 +68,16 @@
 		     <result name="nostatus">/DeptManager/Course/TeachingProgress.jsp</result>
 		     <result name="checked">/DeptManager/Course/TeachingProgress.jsp</result>
 		     <result name="all">/admin/Progress/teachingprogress.jsp</result>
+		      <result name="oneTeacherTeaching">/Teacher/Course/TeachingProgress.jsp</result>
+		     
 		</action>
 		<action name="testprogressAction_*" class="testprogressAction" method="{1}">
 		     <result name="nostatus">/DeptManager/Course/TestProgress.jsp</result>
 		     <result name="checked">/DeptManager/Course/TestProgress.jsp</result>
 		     <result name="all">/admin/Progress/Testprogress.jsp</result>
+		     <result name="onetestTeaching">/Teacher/Course/TestProgress.jsp</result>
+		     
+		     
 		</action>
 		
 		

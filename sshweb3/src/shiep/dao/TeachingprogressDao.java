@@ -12,4 +12,6 @@ public interface TeachingprogressDao {
 	public int getAllRowCount(String hql);
 	public List<Teachingprogress> findall();
 	public List<Teachingprogress> findByTid(String tid);
+	public List<Teachingprogress> findByTeacher(String tid);
+	public List<Teachingprogress> findByTerm(String tid,String term);
 }
