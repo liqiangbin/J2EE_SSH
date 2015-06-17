@@ -20,7 +20,7 @@
     <thead>
     <tr>
         <th>课程大纲号</th>
-        <th>课程名称</th>
+        <th>名称</th>
         <th>学期</th>
         <th>填写教师</th>
         <th>审核状态</th>
@@ -33,7 +33,7 @@
     <%for(int i=0;i<list.size();i++){ %>
     <tr>
     	<td><%=list.get(i).getId() %></td>
-    	<td><%=list.get(i).getCid() %></td>
+    	<td><%=list.get(i).getName() %></td>
     	<td><%=list.get(i).getTerm() %></td>
     	<td><%=list.get(i).getTname()%></td>
     	<td>未通过</td>

@@ -7,13 +7,17 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 
 import shiep.bean.Course;
+import shiep.bean.Courseopen;
 import shiep.bean.Depart;
 import shiep.bean.Matchmessage;
 import shiep.bean.Teacher;
+import shiep.bean.Term;
 import shiep.dao.CourseDao;
+import shiep.dao.CourseOpenDao;
 import shiep.dao.DepartDao;
 import shiep.dao.MatchmessageDao;
 import shiep.dao.TeacherDao;
+import shiep.dao.TermDao;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -25,17 +29,46 @@ public class MatchmessageAction extends ActionSupport{
 	private Teacher teacher;
 	private Depart depart;
 	private Course course;
+	private  Courseopen  courseopen;
+	private  Term  term;
 	@Resource
 	private CourseDao coursedao;
-	
+	@Resource
+	private  CourseOpenDao  courseopendao;
 	@Resource
 	private DepartDao departDao;
 	@Resource
 	private MatchmessageDao matchmessagedao;
 	@Resource
 	private TeacherDao teacherDao;
+	@Resource
+	private TermDao termdao;
 	
 	
+	public Term getTerm() {
+		return term;
+	}
+	public void setTerm(Term term) {
+		this.term = term;
+	}
+	public TermDao getTermdao() {
+		return termdao;
+	}
+	public void setTermdao(TermDao termdao) {
+		this.termdao = termdao;
+	}
+	public Courseopen getCourseopen() {
+		return courseopen;
+	}
+	public void setCourseopen(Courseopen courseopen) {
+		this.courseopen = courseopen;
+	}
+	public CourseOpenDao getCourseopendao() {
+		return courseopendao;
+	}
+	public void setCourseopendao(CourseOpenDao courseopendao) {
+		this.courseopendao = courseopendao;
+	}
 	public Course getCourse() {
 		return course;
 	}
@@ -98,16 +131,17 @@ public class MatchmessageAction extends ActionSupport{
 	public String findbydept1() throws Exception{
 		 ActionContext context=ActionContext.getContext();
 		List<Matchmessage> list= matchmessagedao.findBytstatus(matchmessage.getDid());
-	//	List<Teacher> tlist= teacherDao.showTeacherBydid(matchmessage.getDid());
+		List<Term> term= termdao.findAll();
+		 List<Courseopen> courseopen=(List<Courseopen>)courseopendao.showCourseOpenInfo();
+		 context.getSession().put("courseopen", courseopen);
 		context.getSession().put("teacheroutline", list);
-		//context.getSession().put("teacher", tlist);
+		context.getSession().put("term", term);
 		 return "success1";
 	}
 	public String sort() throws Exception{
 		matchmessagedao.sortTeacher(matchmessage);
 		 return "success";
 	}
-	
 	public String findall() throws Exception{
 		List<Matchmessage> list= matchmessagedao.findAll();
 		List<Depart> list1= departDao.findAllDepart();

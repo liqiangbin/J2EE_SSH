@@ -4,7 +4,7 @@
 
 <html>
 <head>
-    <title>后台管理系统</title>
+    <title>教学进度管理系统（教师）</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="Teacher/assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
     <link href="Teacher/assets/css/bui-min.css" rel="stylesheet" type="text/css" />
@@ -16,9 +16,10 @@
 
     <div class="dl-title">
         <!--<img src="/chinapost/Public/assets/img/top.png">-->
+        <h2>教学进度管理系统（教师）</h2>
     </div>
 
-    <div class="dl-log">欢迎您，<span class="dl-log-user">root教师</span><a href="/chinapost/index.php?m=Public&a=logout" title="退出系统" class="dl-log-quit">[退出]</a>
+    <div class="dl-log">欢迎您，<span class="dl-log-user">[<%=teacher.get(0).getName() %>]&nbsp;教师</span><a href="login.jsp" title="退出系统" class="dl-log-quit">[退出]</a>
     </div>
 </div>
 <div class="content">

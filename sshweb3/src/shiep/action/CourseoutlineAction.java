@@ -8,9 +8,11 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 
 import shiep.bean.Course;
+import shiep.bean.Courseopen;
 import shiep.bean.Courseoutline;
 import shiep.bean.Term;
 import shiep.dao.CourseDao;
+import shiep.dao.CourseOpenDao;
 import shiep.dao.CourseoutlineDao;
 import shiep.dao.TermDao;
 
@@ -23,6 +25,7 @@ public class CourseoutlineAction  extends ActionSupport{
 	private  Courseoutline  courseoutline;
 	private  Term  term;
 	private  Course  course;
+
 	@Resource
 	private  CourseoutlineDao courseoutlinedao;
 	@Resource
@@ -30,11 +33,14 @@ public class CourseoutlineAction  extends ActionSupport{
 	@Resource
 	private  TermDao termdao;
 	
+	
 	//------------------------------
+	
 	
 	public Courseoutline getCourseoutline() {
 		return courseoutline;
 	}
+	
 	public Course getCourse() {
 		return course;
 	}

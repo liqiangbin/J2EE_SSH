@@ -123,16 +123,16 @@ public class CourseAction extends ActionSupport{
 
 	
 	public String showPage() throws Exception{
-		this.pageBean=courseService.queryForPage(5, page);
+		this.pageBean=courseService.queryForPage(8, page);
 		return "pagelist";
 	}
 	
 	public String search() throws Exception{
-		this.pageBean=courseService.search(5, page,course);
+		this.pageBean=courseService.search(8, page,course);
 		return "pagelist";
 	}
 	public String importdata() throws Exception{
-		System.out.println("%%%%%%%%%"+course.getName());
+//		System.out.println("%%%%%%%%%"+course.getName());
 		//ActionContext context=ActionContext.getContext();
 		HttpServletRequest request=ServletActionContext.getRequest();
 		HttpSession session=request.getSession();

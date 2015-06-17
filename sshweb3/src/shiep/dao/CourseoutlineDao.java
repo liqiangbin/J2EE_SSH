@@ -12,4 +12,5 @@ public interface CourseoutlineDao {
 	public List<Courseoutline> showAllOutline();
 	public List<Courseoutline> findByTeacher(String tid);
 	public List<Courseoutline> findByTerm(String tid,String term);
+	public void save(Courseoutline  courseoutline);
 }

@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>后台管理系统</title>
+    <title>教学进度管理系统（超级管理员）</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="admin/assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
     <link href="admin/assets/css/bui-min.css" rel="stylesheet" type="text/css" />
@@ -16,10 +16,11 @@ session.setAttribute("messagetypeadmin",s); %>
 
     <div class="dl-title">
         <!--<img src="/chinapost/Public/assets/img/top.png">-->
+         <h1>教学进度管理系统(超级管理员端)</h1>
     </div>
 
-    <div class="dl-log">欢迎您，<span class="dl-log-user"><%=request.getSession().getAttribute("username") %></span>
-    <a href="login.jsp" title="退出系统" class="dl-log-quit">[退出]</a>
+    <div class="dl-log">欢迎您，<span class="dl-log-user">[<%=request.getSession().getAttribute("username") %>]&nbsp;管理员</span>
+    <a href="login.jsp" &nbsp;&nbsp;title="退出系统" class="dl-log-quit">[退出]</a>
     </div>
 </div>
 <div class="content">

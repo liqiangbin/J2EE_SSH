@@ -13,7 +13,7 @@
 	poCtrl.setWriter(wb);
 	
 	poCtrl.setServerPage("poserver.do");
-	poCtrl.setSaveDataPage("savedata.jsp");
+	poCtrl.setSaveDataPage("savecoursedata.jsp");
 	//若要导入的文件是只读的且有密码保护，则设置属性“setProtectPassword”，其值就是Excel文件中设置的密码
 	poCtrl.setProtectPassword("123456");
 	poCtrl.setTagId("PageOfficeCtrl1");

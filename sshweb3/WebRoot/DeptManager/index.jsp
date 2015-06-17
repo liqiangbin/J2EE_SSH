@@ -5,7 +5,7 @@
 
 <html>
 <head>
-    <title>后台管理系统</title>
+    <title>教学进度管理系统（系主任）</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="DeptManager/assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
     <link href="DeptManager/assets/css/bui-min.css" rel="stylesheet" type="text/css" />
@@ -20,9 +20,10 @@ session.setAttribute("messagetype",s);
 
     <div class="dl-title">
         <!--<img src="/chinapost/Public/assets/img/top.png">-->
+        <h1>教学进度管理系统(系主任端)</h1>
     </div>
 
-    <div class="dl-log">欢迎您，<span class="dl-log-user">root</span><a href="/chinapost/index.php?m=Public&a=logout" title="退出系统" class="dl-log-quit">[退出]</a>
+    <div class="dl-log">欢迎您，<span class="dl-log-user">[<%=person.get(0).getName() %>]&nbsp;主任&nbsp;&nbsp;</span><a href="login.jsp" title="退出系统" class="dl-log-quit">[退出]</a>
     </div>
 </div>
 <div class="content">

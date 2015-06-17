@@ -50,15 +50,11 @@
     </tr>
     </thead>
     <% List<Courseoutline> outline=(List<Courseoutline>)session.getAttribute("TeacherOutline"); 
-    List<Course> course1=(List<Course>)session.getAttribute("course");
+     /*  List<Course> course=(List<Course>)session.getAttribute("course"); */
     %>
-   
     <%for(int i=0;i<outline.size();i++) {%>
     <%int status=outline.get(i).getStatus();
     	if(status==0) {%>
-    
-    	
-    
      <tr>
     	<td><%=outline.get(i).getId() %></td>
     	<td><%=outline.get(i).getName() %></td>
@@ -85,7 +81,6 @@
     		<a href="#">下载大纲</a>	
     	</td>
     </tr>
-    	
     	<%} %>
     	<%} %>
 	     

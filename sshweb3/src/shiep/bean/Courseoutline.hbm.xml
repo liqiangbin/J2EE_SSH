@@ -36,7 +36,7 @@
             </column>
         </property>
         <property name="address" type="java.lang.String">
-            <column name="address" length="50">
+            <column name="address" length="500">
                 <comment>瀛樻斁璺緞</comment>
             </column>
         </property>

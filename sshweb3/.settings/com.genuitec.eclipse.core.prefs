@@ -1,3 +1,3 @@
 eclipse.preferences.version=1
-validator.Checked=src/aplicationContext.xml,WebRoot/admin,WebRoot/DeptManager,src/struts.xml,WebRoot/Teacher
+validator.Checked=src/struts.xml,src/aplicationContext.xml,WebRoot
 validator.Unchecked=

@@ -79,4 +79,14 @@ public class CourseoutlineDaoImpl extends BaseDao implements CourseoutlineDao{
 			throw e;
 		}
 	}
+	@Override
+	@Transactional
+	public void save(Courseoutline courseoutline) {
+		try{
+		       this.getHibernateTemplate().saveOrUpdate(courseoutline);
+			}catch(Exception ex){
+				ex.printStackTrace();
+			}
+		
+	}
 }

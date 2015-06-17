@@ -5,6 +5,15 @@
 <struts>
     <constant name="struts.multipart.saveDir" value="/tmp"/>
     <constant name="struts.i18n.encoding" value="UTF-8" />
+    <package name="pageoffice" extends="struts-default">
+		<action name="openword" class="shiep.action.WordDemo" method="openword">
+			<result name="openword_success">/editword.jsp</result>
+		</action>
+		
+		<action name="saveword" class="shiep.action.WordDemo" method="saveword">
+			<result name="saveword_success">/savefile.jsp</result>
+		</action>
+		</package>
 	<package name="chapter12" extends="struts-default" >
 		<action name="cusAction_*" class="customerAction" method="{1}">
 			<result name="success">success.jsp</result>
