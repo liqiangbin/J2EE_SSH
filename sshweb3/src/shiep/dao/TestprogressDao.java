@@ -13,4 +13,6 @@ public interface TestprogressDao {
 	public List<Testprogress> findall();
 	public List<Testprogress> findByTeacher(String tid);
 	public List<Testprogress> findByTerm(String tid,String term);
+	public void save(Testprogress  testprogress);
+	
 }

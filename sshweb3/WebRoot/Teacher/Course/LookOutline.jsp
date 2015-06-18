@@ -63,9 +63,11 @@
     	</td>
     	<td><%=outline.get(i).getMessage()%></td>
     	<td align="center">
-    		&nbsp;&nbsp;<a href="#">在线编辑</a>
-    	&nbsp;&nbsp;<a href="#">在线预览</a>	&nbsp;&nbsp;
-    		<a href="#">下载大纲</a>	
+    	<%String address=outline.get(i).getAddress();
+    	 %>
+    		&nbsp;&nbsp;<a href="editword?address=<%=address%>">在线编辑</a>
+    	&nbsp;&nbsp;<a href="readonly?address=<%=address%>">在线预览</a>	&nbsp;&nbsp;
+    		<a href="download.action?address=<%=address%>">下载大纲</a>	
     	</td>
     </tr>
     	<%} else{%>
@@ -77,8 +79,11 @@
     	</td>
     	<td><%=outline.get(i).getMessage()%></td>
     	<td align="center">
-    	&nbsp;&nbsp;<a href="#">在线预览</a>	&nbsp;&nbsp;
-    		<a href="#">下载大纲</a>	
+    		<%String address=outline.get(i).getAddress(); 
+    		
+    		%>
+    	&nbsp;&nbsp;<a href="readonly?address=<%=address%>">在线预览</a>&nbsp;&nbsp;
+    		<a href="download.action?address=<%=address%>">下载大纲</a>	
     	</td>
     </tr>
     	<%} %>

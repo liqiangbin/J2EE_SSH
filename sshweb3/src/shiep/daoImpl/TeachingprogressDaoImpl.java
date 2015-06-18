@@ -98,4 +98,14 @@ public class TeachingprogressDaoImpl extends BaseDao implements Teachingprogress
 			throw e;
 		}
 	}
+
+	@Transactional
+	public void save(Teachingprogress teachingprogress) {
+		try{
+		       this.getHibernateTemplate().saveOrUpdate(teachingprogress);
+			}catch(Exception ex){
+				ex.printStackTrace();
+			}
+		
+	}
 	}

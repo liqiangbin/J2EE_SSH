@@ -10,5 +10,5 @@ public interface SortprogressDao {
 	public void save(Sortprogress sortprogress);
 	public List<Sortprogress> findteachingByTeacher(String tid);
 	public List<Sortprogress> findtestByTeacher(String tid);
-
+	public void saveorupdate(Sortprogress sortprogress);
 }

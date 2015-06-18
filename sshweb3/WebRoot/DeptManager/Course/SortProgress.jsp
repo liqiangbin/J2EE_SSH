@@ -126,7 +126,7 @@
        <label for="name">进度表类型：</label>
          <select class="form-control"  name=sortprogress.type>
       <option value="教学进度表">教学进度表</option>
-        <option value="试验进度表">试验进度表</option>
+        <option value="实验进度表">实验进度表</option>
       </select>
        
       </div>

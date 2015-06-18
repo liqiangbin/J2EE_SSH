@@ -92,4 +92,14 @@ public class TestprogressDaoImpl extends BaseDao implements TestprogressDao {
 			throw e;
 		}
 	}
+
+	@Transactional
+	public void save(Testprogress testprogress) {
+		try{
+		       this.getHibernateTemplate().saveOrUpdate(testprogress);
+			}catch(Exception ex){
+				ex.printStackTrace();
+			}
+		
+	}
 }

@@ -88,8 +88,8 @@
  </s:if>
    		</td> 
    					<td><s:property value="message" /></td>
-   					<td><button type="button" class="btn btn-success"><a href="">预览</a></button>&nbsp;&nbsp;
-   					<button type="button" class="btn btn-success"><a href="">下载</a></button>
+   					<td><a class="btn btn-default" role="button" href="readonly?address=<s:property value="address" />">预览</a>&nbsp;&nbsp;
+   					<a class="btn btn-default" role="button" href="download.action?address=<s:property value="address" />">下载</a>
    					</td>
    </tr>
    </s:iterator>
@@ -137,8 +137,8 @@
  </s:if>
    		</td> 
    			<td><s:property value="message" /></td>
-   					<td><button type="button" class="btn btn-success"><a href="">预览</a></button>&nbsp;&nbsp;
-   					<button type="button" class="btn btn-success"><a href="">下载</a></button>
+   					<td><a class="btn btn-default" role="button" href="readonly?address=<s:property value="address" />">预览</a>&nbsp;&nbsp;
+   					<a class="btn btn-default" role="button" href="download.action?address=<s:property value="address" />">下载</a>
    					</td>
    </tr>
    </s:iterator>
@@ -188,8 +188,8 @@
  </s:if>
    		</td> 
    			<td><s:property value="message" /></td>
-   					<td><button type="button" class="btn btn-success"><a href="">预览</a></button>&nbsp;&nbsp;
-   					<button type="button" class="btn btn-success"><a href="">下载</a></button>
+   					<td><a class="btn btn-default" role="button" href="readonly?address=<s:property value="address" />">预览</a>&nbsp;&nbsp;
+   					<a class="btn btn-default" role="button" href="download.action?address=<s:property value="address" />">下载</a>
    					</td>
    </tr>
    </s:iterator>
@@ -228,8 +228,8 @@
    			<td>暂无</td>
    				<td>暂无</td>
    					<td>暂无</td>
-   					<td><button type="button" class="btn btn-success"><a href="">预览</a></button>&nbsp;&nbsp;
-   					<button type="button" class="btn btn-success"><a href="">下载</a></button></td>
+   					<td><button type="button" class="btn btn-success"><a href="readonly?address=<s:property value="address" />">预览</a></button>&nbsp;&nbsp;
+   					<button type="button" class="btn btn-success"><a href="download.action?address=<s:property value="address" />">下载</a></button></td>
    </tr>
    <%} %> 
    

@@ -14,4 +14,5 @@ public interface TeachingprogressDao {
 	public List<Teachingprogress> findByTid(String tid);
 	public List<Teachingprogress> findByTeacher(String tid);
 	public List<Teachingprogress> findByTerm(String tid,String term);
+	public void save(Teachingprogress  teachingprogress);
 }

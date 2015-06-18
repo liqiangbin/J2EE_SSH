@@ -96,8 +96,9 @@
       </div><!-- /.modal-content -->
 </div><!-- /.modal -->
 </div>
-    	&nbsp;&nbsp;<a href="#">在线预览</a>	&nbsp;&nbsp;
-    		<a href="#">下载教学进度表</a>	
+<%String address=list.get(i).getAddress(); %>
+    	&nbsp;&nbsp;<a href="readonly?address=<%=address%>">在线预览</a>	&nbsp;&nbsp;
+    		<a href="download.action?address=<%=address%>">下载大纲</a>	
     	</td>
     	
     </tr>

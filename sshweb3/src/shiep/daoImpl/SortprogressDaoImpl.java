@@ -56,4 +56,12 @@ public List<Sortprogress> findtestByTeacher(String tid) {
 		throw e;
 	}
 }
+@Transactional
+public void saveorupdate(Sortprogress sortprogress) {
+	try{
+	       this.getHibernateTemplate().saveOrUpdate(sortprogress);
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+}
 }

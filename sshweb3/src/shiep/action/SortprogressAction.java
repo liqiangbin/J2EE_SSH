@@ -102,23 +102,24 @@ public class SortprogressAction extends ActionSupport {
 		 ActionContext context=ActionContext.getContext();
 		List<Sortprogress> list= sortprogressdao.findteachingByTeacher(sortprogress.getTid());
 		List<Course> courselist= coursedao.showAllCourseInfo();
+		 List<Term> term=(List<Term>)termdao.findAll();
 		context.getSession().put("nofillteaching", list);
 		context.getSession().put("courselist", courselist);
+		 context.getSession().put("term", term);
 		 return "nofillteaching";
 	}
 	public String findtestByTeacher() throws Exception{
 		 ActionContext context=ActionContext.getContext();
 		List<Sortprogress> list= sortprogressdao.findtestByTeacher(sortprogress.getTid());
 		List<Course> courselist= coursedao.showAllCourseInfo();
+		 List<Term> term=(List<Term>)termdao.findAll();
 		context.getSession().put("nofilltest", list);
 		context.getSession().put("courselist", courselist);
+		 context.getSession().put("term", term);
 		 return "nofilltest";
 	}
 	
 	public String sort() throws Exception{
-//		System.out.println(sortprogress.getCid());
-//		System.out.println(sortprogress.getTid());
-//		System.out.println(sortprogress.getStatus());
 		sortprogressdao.save(sortprogress);
 		return "dd";
 	}

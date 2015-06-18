@@ -70,7 +70,6 @@ String name=null;
 	    <input type="hidden" name="matchmessage.tid" value="<%=list.get(i).getTid()%>">
 	     <input type="hidden" name="matchmessage.tstatus" value="1">
 	     
-	     
          <%
          List<Courseopen> courseopen =(List<Courseopen>)session.getAttribute("courseopen");
          String cid=list.get(i).getCid(); 
